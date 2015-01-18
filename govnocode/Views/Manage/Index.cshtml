@@ -1,7 +1,8 @@
 ﻿@using Microsoft.AspNet.Identity
+@using Resources
 @model govnocode.Models.IndexViewModel
 @{
-    ViewBag.Title = "Manage";
+    ViewBag.Title = @Resource.Manage;
 }
 
 <h2>@ViewBag.Title.</h2>
@@ -24,7 +25,7 @@
                     <input id="userName" onchange="" class="form-control" style="max-width: 100%; width: 100%" type="text" placeholder="введите новое имя"/>
                 </div>
                 <div class="col-md-1" style="">
-                    <input onclick="setUserName()" type="button" class="btn btn-default" value="save"/>
+                    <input onclick="setUserName()" type="button" class="btn btn-default" value="@Resource.Save"/>
                 </div>
 
             </div>
@@ -37,17 +38,17 @@
                     <input id="linkImage" onchange="" onkeyup="    ChahgeImage()" class="form-control" style="max-width: 100%; width: 100%" type="text" placeholder="Link image"/>
                 </div>
                 <div class="col-md-1" style="">
-                    <input onclick="setImageLink()" type="button" class="btn btn-default" value="Save "/>
+                    <input onclick="setImageLink()" type="button" class="btn btn-default" value="@Resource.Save"/>
                 </div>
 
 
             </div>
         </div>
         <div class="well-sm">
-            <dt>Password:</dt>
+            <dt>@Resource.LoginPass</dt>
             <dd>
                 [
-                @(Model.HasPassword ? Html.ActionLink("Change your password", "ChangePassword") : Html.ActionLink("Create", "SetPassword"))
+                @(Model.HasPassword ? Html.ActionLink(Resource.ChangePass, "ChangePassword") : Html.ActionLink("Create", "SetPassword"))
                 ]
             </dd>
         </div>

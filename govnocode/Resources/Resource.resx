@@ -166,6 +166,9 @@
   <data name="ForgotPassTitle2" xml:space="preserve">
     <value>Восстановление пароля</value>
   </data>
+  <data name="HomeTitle" xml:space="preserve">
+    <value>Главная</value>
+  </data>
   <data name="Lang" xml:space="preserve">
     <value>Язык</value>
   </data>
@@ -220,7 +223,40 @@
   <data name="Save" xml:space="preserve">
     <value>Сохранить</value>
   </data>
+  <data name="Top5comments" xml:space="preserve">
+    <value>Топ комментариев</value>
+  </data>
+  <data name="Top5CSharp" xml:space="preserve">
+    <value>Топ C#</value>
+  </data>
+  <data name="Top5Java" xml:space="preserve">
+    <value>Топ</value>
+  </data>
+  <data name="Top5Posts" xml:space="preserve">
+    <value>Топ Публикаций </value>
+  </data>
+  <data name="Top5Users" xml:space="preserve">
+    <value>Топ Пользователей</value>
+  </data>
+  <data name="TopAll" xml:space="preserve">
+    <value>Топ по сайту</value>
+  </data>
   <data name="User" xml:space="preserve">
     <value>Пользователь</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>Новее</value>
+  </data>
+  <data name="Old" xml:space="preserve">
+    <value>Старее</value>
+  </data>
+  <data name="Publication" xml:space="preserve">
+    <value>Публикации</value>
+  </data>
+  <data name="Top5Python" xml:space="preserve">
+    <value>Топ Python</value>
+  </data>
+  <data name="Top5Ruby" xml:space="preserve">
+    <value>Топ  Ruby</value>
   </data>
 </root>

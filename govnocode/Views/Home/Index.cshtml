@@ -1,6 +1,7 @@
 ﻿@using govnocode.Models
+@using Resources
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = @Resource.HomeTitle;
 }
 <!--rating--> 
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -8,7 +9,7 @@
         <div class="panel-heading text-center text-info" role="tab" id="headingOne">
             <h4 class="panel-title text-info">
                 <a data-toggle="collapse" data-parent="#accordion" class="collapsed" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Топ всего
+                   @Resource.TopAll
                 </a>
             </h4>
         </div>
@@ -17,7 +18,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <!--top5Users-->
-                        <h2 class="text-center">Top #5 Users</h2>
+                        <h2 class="text-center">@Resource.Top5Users</h2>
                         <div>
                             @{
                                 var t = "";
@@ -61,7 +62,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <h2 class="text-center">Top 5 posts</h2>
+                        <h2 class="text-center">@Resource.Top5Posts</h2>
                         @{
                             i = 0;
                             var top5Post = (List<Publication>)ViewData["Top5Posts"];
@@ -120,7 +121,7 @@
 
                     </div>
                     <div class="col-md-4">
-                        <h2 class="text-center">Top 5 comments</h2>
+                        <h2 class="text-center">@Resource.Top5comments</h2>
                         @{
                             var top5Comments = (List<Comment>)ViewData["Top5Comments"];
                             i = 0;
@@ -183,7 +184,7 @@
                     <div class="col-md-6">
                         <!--c#-->
                         <div>
-                            <h2 class="text-center">Top #5 C# posts</h2>
+                            <h2 class="text-center">@Resource.Top5CSharp</h2>
 
                             @{
 
@@ -247,7 +248,7 @@
                     <div class="col-md-6">
                         <!--java-->
                         <div>
-                            <h2 class="text-center">Top #5 Java posts</h2>
+                            <h2 class="text-center">@Resource.Top5Java</h2>
 
                             @{
 
@@ -313,7 +314,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div>
-                            <h2 class="text-center">Top #5 Python posts</h2>
+                            <h2 class="text-center">@Resource.Top5Python</h2>
 
                             @{
 
@@ -376,7 +377,7 @@
                     </div>
                     <div class="col-md-6">
                         <div>
-                            <h2 class="text-center">Top #5 Ruby posts</h2>
+                            <h2 class="text-center">@Resource.Top5Ruby</h2>
 
                             @{
 
@@ -445,7 +446,7 @@
 
 </div>
 <!--rating-->
-<h3>Публикации</h3>
+<h3>@Resource.Publication</h3>
 
  @{
      var listPublications = (List<Publication>)ViewData["AllPublication"];
@@ -548,8 +549,8 @@
 
 <nav>
     <ul class="pager">
-        <li class="previous"><a href="@Url.Action("Index",new {page=(int)ViewData["Page"]-1})"><span aria-hidden="true">&larr;</span> New</a></li>
-        <li class="next"><a href="@Url.Action("Index",new {page=(int)ViewData["Page"]+1})">Older <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="previous"><a href="@Url.Action("Index",new {page=(int)ViewData["Page"]-1})"><span aria-hidden="true">&larr;</span>@Resource.New</a></li>
+        <li class="next"><a href="@Url.Action("Index",new {page=(int)ViewData["Page"]+1})">@Resource.Old <span aria-hidden="true">&rarr;</span></a></li>
     </ul>
 </nav>
 <!--Tags-->

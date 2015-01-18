@@ -106,6 +106,33 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Управление паролем.
+        /// </summary>
+        public static string ChangePass {
+            get {
+                return ResourceManager.GetString("ChangePass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Форма для изменения пароля.
+        /// </summary>
+        public static string ChangePassForm {
+            get {
+                return ResourceManager.GetString("ChangePassForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Управление пользовательскими данными.
+        /// </summary>
+        public static string ChangeYourAccountSettings {
+            get {
+                return ResourceManager.GetString("ChangeYourAccountSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Подтверждение почты.
         /// </summary>
         public static string ComfimEmailTitle {
@@ -133,6 +160,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Создание профиля.
+        /// </summary>
+        public static string CreateLocalLogin {
+            get {
+                return ResourceManager.GetString("CreateLocalLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Удалить.
         /// </summary>
         public static string Delete {
@@ -156,6 +192,15 @@ namespace Resources {
         public static string Edit {
             get {
                 return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Вы не имеете профиля на этом сайте..
+        /// </summary>
+        public static string ErrorPass {
+            get {
+                return ResourceManager.GetString("ErrorPass", resourceCulture);
             }
         }
         
@@ -201,6 +246,15 @@ namespace Resources {
         public static string ForgotPassTitle2 {
             get {
                 return ResourceManager.GetString("ForgotPassTitle2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Главная.
+        /// </summary>
+        public static string HomeTitle {
+            get {
+                return ResourceManager.GetString("HomeTitle", resourceCulture);
             }
         }
         
@@ -273,6 +327,42 @@ namespace Resources {
         public static string LoginUseLogin {
             get {
                 return ResourceManager.GetString("LoginUseLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Управление.
+        /// </summary>
+        public static string Manage {
+            get {
+                return ResourceManager.GetString("Manage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Новее.
+        /// </summary>
+        public static string New {
+            get {
+                return ResourceManager.GetString("New", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Старее.
+        /// </summary>
+        public static string Old {
+            get {
+                return ResourceManager.GetString("Old", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Публикации.
+        /// </summary>
+        public static string Publication {
+            get {
+                return ResourceManager.GetString("Publication", resourceCulture);
             }
         }
         
@@ -363,6 +453,78 @@ namespace Resources {
         public static string Save {
             get {
                 return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Топ комментариев.
+        /// </summary>
+        public static string Top5comments {
+            get {
+                return ResourceManager.GetString("Top5comments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Топ C#.
+        /// </summary>
+        public static string Top5CSharp {
+            get {
+                return ResourceManager.GetString("Top5CSharp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Топ.
+        /// </summary>
+        public static string Top5Java {
+            get {
+                return ResourceManager.GetString("Top5Java", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Топ Публикаций .
+        /// </summary>
+        public static string Top5Posts {
+            get {
+                return ResourceManager.GetString("Top5Posts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Топ Python.
+        /// </summary>
+        public static string Top5Python {
+            get {
+                return ResourceManager.GetString("Top5Python", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Топ  Ruby.
+        /// </summary>
+        public static string Top5Ruby {
+            get {
+                return ResourceManager.GetString("Top5Ruby", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Топ Пользователей.
+        /// </summary>
+        public static string Top5Users {
+            get {
+                return ResourceManager.GetString("Top5Users", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Топ по сайту.
+        /// </summary>
+        public static string TopAll {
+            get {
+                return ResourceManager.GetString("TopAll", resourceCulture);
             }
         }
         
