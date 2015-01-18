@@ -106,6 +106,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Заблокирован.
+        /// </summary>
+        public static string Blocked {
+            get {
+                return ResourceManager.GetString("Blocked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Управление паролем.
         /// </summary>
         public static string ChangePass {
