@@ -500,8 +500,9 @@ function viewcomment(data) {
             if (data.hasOwnProperty(index)) {
 
                 var attr = data[index];
-                var upfunc = "up(" + attr["Id"] + ");";
                 var id = attr["Id"];
+                var upfunc = "up(" + id + ");";
+                
                 var idedit = "edit" + id;
                 requestEdit(id);
                 var downfunc = "down(" + attr["Id"] + ");";

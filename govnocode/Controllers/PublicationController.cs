@@ -141,6 +141,9 @@ namespace govnocode.Controllers
         [ValidateInput(false)]
         public ActionResult Create(Publication publication)
         {
+            if (string.IsNullOrEmpty(publication.Text) || string.IsNullOrEmpty(publication.Title) ||
+                string.IsNullOrEmpty(publication.Code) || string.IsNullOrEmpty(publication.Lang)||string.IsNullOrEmpty(publication.TagString))
+                return View(publication);
             publication.Text = publication.Text.Trim();
             publication.UserId = User.Identity.GetUserId();
             var tags = publication.TagString.Split(',').Where(x => !string.IsNullOrEmpty(x)).ToList();

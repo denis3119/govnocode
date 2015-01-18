@@ -117,7 +117,229 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="AdminDeleteText" xml:space="preserve">
+    <value>Are you sure you want to delete a user?</value>
+  </data>
+  <data name="AdminDeleteTitle" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="AdminDeleteUserText" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="AdminIndex" xml:space="preserve">
+    <value>User List</value>
+  </data>
+  <data name="BackToList" xml:space="preserve">
+    <value>Back to list</value>
+  </data>
+  <data name="Blocked" xml:space="preserve">
+    <value>Blocked</value>
+  </data>
+  <data name="ChangePass" xml:space="preserve">
+    <value>Control Password</value>
+  </data>
+  <data name="ChangePassForm" xml:space="preserve">
+    <value>Form to change your password</value>
+  </data>
+  <data name="ChangeYourAccountSettings" xml:space="preserve">
+    <value>Your account settings</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="ComfimEmailTitle" xml:space="preserve">
+    <value>Confirmation email</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Comments</value>
+  </data>
+  <data name="ConfimEmailText" xml:space="preserve">
+    <value>Thank you for confirming your email. Please</value>
+  </data>
+  <data name="ConfimEmailTextLink" xml:space="preserve">
+    <value>Click to login</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="CreateLocalLogin" xml:space="preserve">
+    <value>Create local login</value>
+  </data>
+  <data name="CreatePost" xml:space="preserve">
+    <value>Create publication</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="drrf" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="EditComment" xml:space="preserve">
+    <value>Edit comment</value>
+  </data>
+  <data name="ErrorPass" xml:space="preserve">
+    <value>You do not have a profile on this site.</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="ForgotPassBtnText" xml:space="preserve">
+    <value>Send a link</value>
+  </data>
+  <data name="ForgotPassEnterYourEmail" xml:space="preserve">
+    <value>Enter your email</value>
+  </data>
+  <data name="ForgotPassText" xml:space="preserve">
+    <value>Please check your email to reset your password.</value>
+  </data>
+  <data name="ForgotPassTitle" xml:space="preserve">
+    <value>Forgot your password?</value>
+  </data>
+  <data name="ForgotPassTitle2" xml:space="preserve">
+    <value>Password recovery</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="HomeTitle" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="InPublication" xml:space="preserve">
+    <value>in publication</value>
+  </data>
   <data name="Lang" xml:space="preserve">
     <value>Lang</value>
+  </data>
+  <data name="Lang1" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="LoginBtnLogin" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="LoginEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="LoginPass" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="LoginRegisterForgoutPass" xml:space="preserve">
+    <value>Forgot your password?</value>
+  </data>
+  <data name="LoginRegisterNewUser" xml:space="preserve">
+    <value>Create new account</value>
+  </data>
+  <data name="LoginTitle" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="LoginUseLogin" xml:space="preserve">
+    <value>Use your login login</value>
+  </data>
+  <data name="Manage" xml:space="preserve">
+    <value>Manage</value>
+  </data>
+  <data name="MyPublication" xml:space="preserve">
+    <value>My publications</value>
+  </data>
+  <data name="NameProject" xml:space="preserve">
+    <value>Mega project</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>Newer</value>
+  </data>
+  <data name="Old" xml:space="preserve">
+    <value>Older</value>
+  </data>
+  <data name="Publication" xml:space="preserve">
+    <value>Publication</value>
+  </data>
+  <data name="Publications" xml:space="preserve">
+    <value>Publications</value>
+  </data>
+  <data name="RegisterCreateNewAccount" xml:space="preserve">
+    <value>Create a new profile</value>
+  </data>
+  <data name="RegisterRegister" xml:space="preserve">
+    <value>Registration</value>
+  </data>
+  <data name="RegisterSuccess" xml:space="preserve">
+    <value>Successful registration</value>
+  </data>
+  <data name="RegisterSuccessCheckEmail" xml:space="preserve">
+    <value>Check your email</value>
+  </data>
+  <data name="RegisterTitle" xml:space="preserve">
+    <value>Registration</value>
+  </data>
+  <data name="ResetBtnReset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="ResetPassConfimationText" xml:space="preserve">
+    <value>Your password has been reset.</value>
+  </data>
+  <data name="ResetPassConfimationTitle" xml:space="preserve">
+    <value>Password Reset</value>
+  </data>
+  <data name="ResetPassTitle" xml:space="preserve">
+    <value>Password Reset</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SearchComments" xml:space="preserve">
+    <value>Found comments</value>
+  </data>
+  <data name="SearchPublication" xml:space="preserve">
+    <value>Found publications</value>
+  </data>
+  <data name="Tags" xml:space="preserve">
+    <value>Tags</value>
+  </data>
+  <data name="tg" xml:space="preserve">
+    <value>r</value>
+  </data>
+  <data name="Top5comments" xml:space="preserve">
+    <value>Top comments</value>
+  </data>
+  <data name="Top5CSharp" xml:space="preserve">
+    <value>Top C#</value>
+  </data>
+  <data name="Top5Java" xml:space="preserve">
+    <value>Top</value>
+  </data>
+  <data name="Top5Posts" xml:space="preserve">
+    <value>Top publication</value>
+  </data>
+  <data name="Top5Python" xml:space="preserve">
+    <value>Top Python</value>
+  </data>
+  <data name="Top5Ruby" xml:space="preserve">
+    <value>Top  Ruby</value>
+  </data>
+  <data name="Top5Users" xml:space="preserve">
+    <value>Top users</value>
+  </data>
+  <data name="TopAll" xml:space="preserve">
+    <value>Top</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>User</value>
   </data>
 </root>
