@@ -244,6 +244,12 @@
   <data name="User" xml:space="preserve">
     <value>Пользователь</value>
   </data>
+  <data name="3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>О...</value>
+  </data>
   <data name="Blocked" xml:space="preserve">
     <value>Заблокирован</value>
   </data>
@@ -265,6 +271,9 @@
   <data name="Comments" xml:space="preserve">
     <value>Комментарии</value>
   </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Связь</value>
+  </data>
   <data name="Create" xml:space="preserve">
     <value>Создание</value>
   </data>
@@ -284,6 +293,9 @@
     <value>Вы не имеете профиля на этом сайте.</value>
     <comment>You do not have a local username/password for this site. Add a local
     account so you can log in without an external login.</comment>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Главная</value>
   </data>
   <data name="InPublication" xml:space="preserve">
     <value>в теме:</value>
@@ -317,6 +329,9 @@
   </data>
   <data name="SearchPublication" xml:space="preserve">
     <value>Найдено публикаций</value>
+  </data>
+  <data name="Tags" xml:space="preserve">
+    <value>Теги</value>
   </data>
   <data name="Top5Python" xml:space="preserve">
     <value>Топ Python</value>

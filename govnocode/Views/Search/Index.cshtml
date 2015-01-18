@@ -1,16 +1,17 @@
 ﻿@using System.Collections
 @using govnocode.Models
+@using Resources
 @model dynamic
 
 @{
-    ViewBag.Title = "title";
+    ViewBag.Title = @Resource.Search;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @{
     var publications = ((IEnumerable<Publication>)ViewData["Publications"]).ToList();
 
 }
-<h3>Найдено публикаций:@publications.ToList().Count</h3>
+<h3>@Resource.SearchPublication:@publications.ToList().Count</h3>
 @{
     // var publications = (List<Publication>)ViewData["Pub"];
     foreach (var variable in publications)
@@ -94,12 +95,12 @@
                         var listComments = (List<Comment>)ViewData["Comments"];
                         var count = listComments.Count(x => x.IdPublication == variable.Id);
                     }
-                    Comments:@count
+                    @Resource.Comments:@count
 
                 </div>
 
                 <div class="col-md-1">
-                    <a href="@Url.Action("Details", "Publication", new {id = variable.Id})" class="btn btn-link text-info">Info</a>
+                    <a href="@Url.Action("Details", "Publication", new {id = variable.Id})" class="btn btn-link text-info">@Resource.Details</a>
                 </div>
             </div>
         </div>
@@ -111,7 +112,7 @@
     var users = (List<ApplicationUser>)ViewData["Users"];
     var allPublication = (List<Publication>)ViewData["AllPublication"];
 }
-<h3>Найдено комментариев:@comments.Count</h3>
+<h3>@Resource.SearchComments:@comments.Count</h3>
 @{
     //var top5Post = (List<Publication>)ViewData["Top5Posts"];
     foreach (var variable in comments)
@@ -136,7 +137,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-1" style="font-size: larger">в теме</div>
+                <div class="col-md-1" style="font-size: larger">@Resource.InPublication</div>
                 <div class="col-md-5" style="font-size: larger">
                     @{
                         var variable2 = variable;

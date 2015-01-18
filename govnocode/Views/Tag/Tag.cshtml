@@ -1,8 +1,9 @@
 ﻿@using govnocode.Models
+@using Resources
 @model IEnumerable<govnocode.Models.Publication>
 
 @{
-    ViewBag.Title = "Tag";
+    ViewBag.Title = @Resource.Tags;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -10,7 +11,7 @@
 
 @{
     var publications = (List<Publication>)ViewData["Pub"];
-    <h3>Найдено публикаций:@publications.Count</h3>
+    <h3>@Resource.SearchPublication:@publications.Count</h3>
     foreach (var variable in publications)
     {
             @*<div>@variable.Title </div>
@@ -92,12 +93,12 @@
                         var listComments = (List<Comment>) ViewData["Comments"];
                         var count = listComments.Count(x => x.IdPublication == variable.Id);
                     }
-                    Comments:@count
+                    @Resource.Comments:@count
 
                 </div>
 
                 <div class="col-md-1">
-                    <a href="@Url.Action("Details", "Publication", new {id = variable.Id})" class="btn btn-link text-info">Info</a>
+                    <a href="@Url.Action("Details", "Publication", new {id = variable.Id})" class="btn btn-link text-info">@Resource.Publication</a>
                 </div>
             </div>
         </div>

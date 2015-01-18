@@ -1,13 +1,14 @@
-﻿@model govnocode.Models.Tag
+﻿@using Resources
+@model govnocode.Models.Tag
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = Resource.Tags;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div id="myCanvasContainer">
     <canvas width="900" height="500" id="myCanvas">
-        <p>Anything in here will be replaced on browsers that support the canvas element</p>
+        <p>@Resource.Tags</p>
         <ul>
             @{
                 var tags = (List<string>)ViewData["Tags"];
