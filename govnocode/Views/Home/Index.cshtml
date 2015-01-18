@@ -506,14 +506,14 @@
                      </label>
 
                  </div>
-                 <div class="col-md-4" style="margin-top: 0.5%">
+                 <div class="col-md-3" style="margin-top: 0.5%">
                      @{
                          var code10Chars = "";
                          i = 0;
                          foreach (var VARIABLE in variable.Code.Replace("\r\n", ""))
                          {
 
-                             if (i < 40)
+                             if (i < 28)
                              {
                                  code10Chars += VARIABLE;
                              }
@@ -526,12 +526,12 @@
                      } 
                      <pre class="prettyprint" style="margin-bottom: -10%"> @(code10Chars)...... </pre>
                  </div>
-                 <div class="col-md-1" style="margin-top: 0.5%">
+                 <div class="col-md-2" style="margin-top: 0.5%">
                      @{
                          var listComments = (List<Comment>)ViewData["Comments"];
                          var count = listComments.Count(x => x.IdPublication == variable.Id);
                      } 
-                     Comments:@count
+                     @Resource.Comments:@count
 
                  </div>
                  <div class="col-md-1">
@@ -539,17 +539,20 @@
                  </div>
 
                  <div class="col-md-1">
-                     <a href="@Url.Action("Details", "Publication", new {id = variable.Id})" class="btn btn-link text-info">Info</a>
+                     <a href="@Url.Action("Details", "Publication", new {id = variable.Id})" class="btn btn-link text-info">@Resource.Details</a>
                  </div>
              </div>
          </div> 
          i++;
      }
  }
-
+     @{
+         var p = (int) ViewData["Page"];
+         p.ToString();
+     }
 <nav>
     <ul class="pager">
-        <li class="previous"><a href="@Url.Action("Index",new {page=(int)ViewData["Page"]-1})"><span aria-hidden="true">&larr;</span>@Resource.New</a></li>
+        <li class="previous @{if(p==1){@Html.Raw("disabled")}}"><a href="@Url.Action("Index",new {page=p-1})"><span aria-hidden="true">&larr;</span>@Resource.New</a></li>
         <li class="next"><a href="@Url.Action("Index",new {page=(int)ViewData["Page"]+1})">@Resource.Old <span aria-hidden="true">&rarr;</span></a></li>
     </ul>
 </nav>

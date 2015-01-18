@@ -61,15 +61,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        public static string _3 {
-            get {
-                return ResourceManager.GetString("3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to О....
         /// </summary>
         public static string About {
@@ -259,7 +250,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Подробнее.
+        ///   Looks up a localized string similar to Глянуть.
         /// </summary>
         public static string Details {
             get {
@@ -300,6 +291,15 @@ namespace Resources {
         public static string ErrorPass {
             get {
                 return ResourceManager.GetString("ErrorPass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Выход.
+        /// </summary>
+        public static string Exit {
+            get {
+                return ResourceManager.GetString("Exit", resourceCulture);
             }
         }
         
@@ -633,6 +633,15 @@ namespace Resources {
         public static string Tags {
             get {
                 return ResourceManager.GetString("Tags", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to r.
+        /// </summary>
+        public static string tg {
+            get {
+                return ResourceManager.GetString("tg", resourceCulture);
             }
         }
         

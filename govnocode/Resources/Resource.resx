@@ -145,7 +145,7 @@
     <value>Удалить</value>
   </data>
   <data name="Details" xml:space="preserve">
-    <value>Подробнее</value>
+    <value>Глянуть</value>
   </data>
   <data name="Edit" xml:space="preserve">
     <value>Редактирование</value>
@@ -244,8 +244,8 @@
   <data name="User" xml:space="preserve">
     <value>Пользователь</value>
   </data>
-  <data name="3" xml:space="preserve">
-    <value />
+  <data name="tg" xml:space="preserve">
+    <value>r</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>О...</value>
@@ -338,5 +338,8 @@
   </data>
   <data name="Top5Ruby" xml:space="preserve">
     <value>Топ  Ruby</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Выход</value>
   </data>
 </root>
