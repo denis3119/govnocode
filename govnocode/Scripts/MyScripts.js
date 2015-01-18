@@ -543,11 +543,11 @@ function viewcomment(data) {
                     
                     "</table>";
 
-                nameurl += "<a style=\"margin-left:0%;\"  href=\"/Profile/details/" + attr["IdUser"] + "\">" + attr["UserName"] + "</a>";
+                nameurl += "<a style=\"margin-left:0%;\"  href=\"/Profile/details/" + attr["IdUser"] + "\"><img src=\"http://www.x-bikers.ru/forum/avatars/309593.gif\" alt=\"admin\" width=\"32\" height=\"32\" class=\"img-rounded\">" + attr["UserName"] + "</a>";
                 var row = rows(attr["Text"]);
                 res += "<div class=\"well-sm well-1\"  style=\"border: 1px;padding: 1px\">" +
                     "<div class=\"container row\">" +
-                    "<div style=\"margin-top:2%;\" id='" + id + "' class=\"col-lg-1\">" +
+                    "<div style=\"margin-top:0;\" id='" + id + "' class=\"col-lg-1 text-center\">" +
                     "" + nameurl + "" +
                     "<div><label class=\"text-info\">" + rate + "</label></div>" +
                     "</div>" +
