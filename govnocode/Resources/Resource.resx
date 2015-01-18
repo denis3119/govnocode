@@ -342,4 +342,7 @@
   <data name="Exit" xml:space="preserve">
     <value>Выход</value>
   </data>
+  <data name="Themes" xml:space="preserve">
+    <value>Скин сайта</value>
+  </data>
 </root>

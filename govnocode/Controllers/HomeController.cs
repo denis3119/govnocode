@@ -75,7 +75,7 @@ namespace govnocode.Controllers
         {
             string returnUrl = Request.UrlReferrer.AbsolutePath;
             // Список культур
-            List<string> cultures = new List<string>() { "ru", "en", "de" };
+            List<string> cultures = new List<string>() { "ru", "en" };
             if (!cultures.Contains(lang))
             {
                 lang = "ru";
@@ -91,6 +91,30 @@ namespace govnocode.Controllers
                 cookie.HttpOnly = false;
                 cookie.Value = lang;
                 cookie.Expires = DateTime.Now.AddYears(1);
+            }
+            Response.Cookies.Add(cookie);
+            return Redirect(returnUrl);
+        }
+        public ActionResult ChangeThemes(string them)
+        {
+            var returnUrl = Request.UrlReferrer.AbsolutePath;
+            // Список культур
+            var themesList = new List<string>() { "css", "css2" };
+            if (!themesList.Contains(them))
+            {
+                them = "css";
+            }
+            // Сохраняем выбранную культуру в куки
+            var cookie = Request.Cookies["them"];
+            if (cookie != null)
+                cookie.Value = them;   // если куки уже установлено, то обновляем значение
+            else
+            {
+
+                cookie = new HttpCookie("them")
+                {
+                    HttpOnly = false, Value = them, Expires = DateTime.Now.AddYears(1)
+                };
             }
             Response.Cookies.Add(cookie);
             return Redirect(returnUrl);

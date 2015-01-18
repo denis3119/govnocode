@@ -10,7 +10,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - @Resource.NameProject</title>
-    @Styles.Render("~/Content/css")
+     @{
+         var c = Request.Cookies["them"];
+         if (c.Value == null || c.Value == "css")
+         {
+             @Styles.Render("~/Content/css")
+         }
+         else
+         {
+            @Styles.Render("~/Content/css2")
+         }
+    }
+   
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
@@ -90,7 +101,7 @@
     @RenderBody()
     <hr/>
     <footer class="row">
-        <div class="col-md-9"> <p>&copy; @DateTime.Now.Year - @Resource.NameProject</p> </div>
+        <div class="col-md-6"> <p>&copy; @DateTime.Now.Year - @Resource.NameProject</p> </div>
         <div class="col-md-3">
             @using (Html.BeginForm("ChangeCulture", "Home",new{@class="form-control"}))
             {
@@ -104,7 +115,20 @@
 
 
         </div>
-       
+
+        <div class="col-md-3">
+            @using (Html.BeginForm("ChangeThemes", "Home", new { @class = "form-control" }))
+            {
+                <select onchange="$('#themeChange').click()" name="them" class="form-control">
+                    <option disabled selected>themes</option>
+                    <option value="css">White</option>
+                    <option value="css2">Black</option>
+                </select>
+              <input hidden="hidden" type="submit" id="themeChange" name="submit" class="btn hidden btn-default" value="@Resource.Lang">
+            }
+
+
+        </div>
     </footer>
 </div>
 

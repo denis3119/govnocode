@@ -31,7 +31,6 @@ namespace govnocode
                       "~/Scripts/google-code-prettify/*prettify.js",
                       "~/Scripts/jquery-ui-1.11.2.js"
                       ,"~/Scripts/tag-it.js",
-                 
                       "~/Scripts/jquery.tagcanvas.js"
                       
                       ));
@@ -47,6 +46,17 @@ namespace govnocode
                       
                       )
                       );
+            bundles.Add(new StyleBundle("~/Content/css2").Include(
+            "~/Content/bootstrap2.css",
+            "~/Content/site.css"
+            , "~/Content/bootstrap-markdown.min.css",
+            "~/Content/prettify.css",
+            "~/Content/themes/base/all.css",
+            "~/Content/jquery.tagit.css",
+            "~/Content/tagit.ui-zendesk.css"
+
+            )
+            );
         }
     }
 }

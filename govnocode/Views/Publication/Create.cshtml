@@ -37,7 +37,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Text, htmlAttributes: new { @class = "control-label col-md-1" })
             <div class="col-md-10">
-                <textarea class="form-control" id="Text" name="Text" type="text" data-provide="markdown" style="max-width: 100%" rows="10">@Html.DisplayFor(model => model.Text)</textarea>
+                <textarea class="form-control" id="Text" hiddenbuttons="" name="Text" type="text" data-provide="markdown" style="max-width: 100%" rows="10">@Html.DisplayFor(model => model.Text)</textarea>
                 @Html.ValidationMessageFor(model => model.Text, "", new { @class = "text-danger" })
             </div>
         </div>

@@ -646,6 +646,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Скин сайта.
+        /// </summary>
+        public static string Themes {
+            get {
+                return ResourceManager.GetString("Themes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Топ комментариев.
         /// </summary>
         public static string Top5comments {

@@ -342,4 +342,7 @@
   <data name="User" xml:space="preserve">
     <value>User</value>
   </data>
+  <data name="Themes" xml:space="preserve">
+    <value>Themes</value>
+  </data>
 </root>
