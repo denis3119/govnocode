@@ -1,0 +1,2 @@
+﻿# CoffeeScript
+ alert("ttt");

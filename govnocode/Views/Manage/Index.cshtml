@@ -1,0 +1,60 @@
+﻿@using Microsoft.AspNet.Identity
+@model govnocode.Models.IndexViewModel
+@{
+    ViewBag.Title = "Manage";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+<p class="text-success">@ViewBag.StatusMessage</p>
+
+    <h4>Change your account settings</h4>
+<hr/>
+<div class="row">
+    <div class="col-md-2">
+        @{ var link = (string)ViewData["LinkImage"];}
+        <img id="image" src="@link" width="140" height="140" alt="..." class="img-rounded img-responsive">
+    </div>
+    <div class="row col-md-10">
+
+        <div class="row">
+            <div class="well-sm">
+                <label id="saveName" class="label label-danger"></label>
+                <div style="" class="col-md-6">
+                    <input id="userName" onchange="" class="form-control" style="max-width: 100%; width: 100%" type="text" placeholder="введите новое имя"/>
+                </div>
+                <div class="col-md-1" style="">
+                    <input onclick="setUserName()" type="button" class="btn btn-default" value="save"/>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="well-sm">
+                <label id="saveImage" class="label label-danger"></label>
+                <div style="" class="col-md-6">
+                    <input id="linkImage" onchange="" onkeyup="    ChahgeImage()" class="form-control" style="max-width: 100%; width: 100%" type="text" placeholder="Link image"/>
+                </div>
+                <div class="col-md-1" style="">
+                    <input onclick="setImageLink()" type="button" class="btn btn-default" value="Save "/>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="well-sm">
+            <dt>Password:</dt>
+            <dd>
+                [
+                @(Model.HasPassword ? Html.ActionLink("Change your password", "ChangePassword") : Html.ActionLink("Create", "SetPassword"))
+                ]
+            </dd>
+        </div>
+    </div>
+
+
+</div>
+
+
+

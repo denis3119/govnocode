@@ -1,0 +1,167 @@
+﻿@using System.Collections
+@using govnocode.Models
+@model dynamic
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var publications = ((IEnumerable<Publication>)ViewData["Publications"]).ToList();
+
+}
+<h3>Найдено публикаций:@publications.ToList().Count</h3>
+@{
+    // var publications = (List<Publication>)ViewData["Pub"];
+    foreach (var variable in publications)
+    {
+        @*<div>@variable.Title </div>
+            <a href="@Url.Action("Details","Publication",new {id=variable.Id})">33</a>*@
+        <div class="well-1 well-sm">
+            <div class="row">
+                <div class="col-md-2" style="text-align: center;margin-top: 0.4%">
+                    <img id="" src="../../Images/starOn.png" alt="" />
+                    @if (variable.Rate >= 2)
+                    {
+                    <img id="" src="../../Images/starOn.png" alt="" />
+                    }
+                    else
+                    {
+                    <img id="" src="../../Images/starOff.png" alt="" />
+                    }
+                    @if (variable.Rate >= 3)
+                    {
+                    <img id="" src="../../Images/starOn.png" alt="" />
+                    }
+                    else
+                    {
+                    <img id="" src="../../Images/starOff.png" alt="" />
+                    }
+                    @if (variable.Rate >= 4)
+                    {
+                    <img id="" src="../../Images/starOn.png" alt="" />
+                    }
+                    else
+                    {
+                    <img id="" src="../../Images/starOff.png" alt="" />
+                    }
+                    @if (variable.Rate > 4.9)
+                    {
+                    <img id="" src="../../Images/starOn.png" alt="" />
+                    }
+                    else
+                    {
+                    <img id="" src="../../Images/starOff.png" alt="" />
+                    }
+                </div>
+                <div class="col-md-3">
+                    <label class="text-info" style="margin-top: 2.7%">
+                        @if (variable.Title.Length > 30)
+                        {
+                        @Html.Raw(@variable.Title.Substring(0, 29) + "...")
+
+                        }
+                        else
+                        {
+                        @Html.Raw(@variable.Title)
+                            ;
+                        }
+                    </label>
+
+                </div>
+                <div class="col-md-4" style="margin-top: 0.5%">
+                    @{
+                        var code10Chars = "";
+                        var i = 0;
+                        foreach (var VARIABLE in variable.Code.Replace("\r\n", ""))
+                        {
+
+                            if (i < 40)
+                            {
+                                code10Chars += VARIABLE;
+                            }
+                            else
+                            {
+                                break;
+                            }
+                            i++;
+                        }
+                    }
+                    <pre class="prettyprint" style="margin-bottom: -10%"> @code10Chars...... </pre>
+                </div>
+                <div class="col-md-2" style="text-align: center;margin-top: 0.5%">
+                    @{
+                        var listComments = (List<Comment>)ViewData["Comments"];
+                        var count = listComments.Count(x => x.IdPublication == variable.Id);
+                    }
+                    Comments:@count
+
+                </div>
+
+                <div class="col-md-1">
+                    <a href="@Url.Action("Details", "Publication", new {id = variable.Id})" class="btn btn-link text-info">Info</a>
+                </div>
+            </div>
+        </div>
+    }
+}
+<hr>
+@{
+    var comments = ((IEnumerable<Comment>)ViewData["Comments"]).ToList();
+    var users = (List<ApplicationUser>)ViewData["Users"];
+    var allPublication = (List<Publication>)ViewData["AllPublication"];
+}
+<h3>Найдено комментариев:@comments.Count</h3>
+@{
+    //var top5Post = (List<Publication>)ViewData["Top5Posts"];
+    foreach (var variable in comments)
+    {
+        <div class="well-1 well-sm">
+            <div class="row ">
+                <div class="col-md-4">
+                    <a href="@Url.Action("Details", "Publication", new {id = variable.IdPublication})@Html.Raw("#text"+variable.Id)">
+                        <div>
+                            <div style="font-size: larger" class="">
+                                <span class="badge-1">@variable.Rate</span>
+                                @if (variable.Text.Length > 30)
+                                {
+                                    @Html.Raw(@variable.Text.Substring(0, 29) + "...")
+
+                                }
+                                else
+                                {
+                                    @Html.Raw(@variable.Text);
+                                }
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-1" style="font-size: larger">в теме</div>
+                <div class="col-md-5" style="font-size: larger">
+                    @{
+                        var variable2 = variable;
+                        var publication = allPublication.First(x => x.Id == variable2.IdPublication);
+                    }
+                       <a href="@Url.Action("Details","Publication",new{id=publication.Id})">@publication.Title</a>
+                </div>
+                <div class="col-md-2">
+                    <div style="font-size: larger" class="">
+                        <a href="@Url.Action("Details", "Profile", new {id = variable.IdUser})">
+
+                            <div class="">
+                                @{
+                                var variable1 = variable;
+                                var firstOrDefault = users.FirstOrDefault(x => x.Id == variable1.IdUser);
+                                }
+                                @if (firstOrDefault != null)
+                                {
+                                    @Html.Raw("от ")@firstOrDefault.Name
+                                }
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}

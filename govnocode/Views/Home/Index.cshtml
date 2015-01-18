@@ -1,0 +1,555 @@
+﻿@using govnocode.Models
+@{
+    ViewBag.Title = "Home Page";
+}
+<!--rating--> 
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+        <div class="panel-heading text-center text-info" role="tab" id="headingOne">
+            <h4 class="panel-title text-info">
+                <a data-toggle="collapse" data-parent="#accordion" class="collapsed" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Топ всего
+                </a>
+            </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <!--top5Users-->
+                        <h2 class="text-center">Top #5 Users</h2>
+                        <div>
+                            @{
+                                var t = "";
+                                var i = 0;
+                                var users = (List<ApplicationUser>)ViewData["Top5Users"];
+                                var sortUser = users.OrderByDescending(x => x.Rating);
+                                var k = 5 / sortUser.First().Rating;
+                                foreach (var variable in sortUser)
+                                {
+                                    variable.Rating *= k;
+                                    i++;
+                                    if (string.IsNullOrEmpty(variable.LinkAvatar))
+                                    {
+                                        variable.LinkAvatar = "http://www.x-bikers.ru/forum/avatars/309593.gif";
+                                    }
+                                    switch (i)
+                                    {
+                                        case 1: t = "text text-danger"; break;
+                                        case 2: t = "text text-warning"; break;
+                                        case 3: t = "text text-success"; break;
+                                        default: t = "text text-primary"; break;
+                                    }
+                                    <a href="@Url.Action("Details", "Profile", new {id = variable.Id})">
+                                        <div class="row">
+                                            <div class="col-md-1">
+                                                <img src="@variable.LinkAvatar" alt="@variable.Name" width="25" height="25" class="img-rounded">
+                                            </div>
+                                            <div class="col-md-8" style="margin-top: 0.5%">
+
+
+                                                <div style="font-size: larger" class="@t">
+                                                    @i.@variable.Name
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h2 class="text-center">Top 5 posts</h2>
+                        @{
+                            i = 0;
+                            var top5Post = (List<Publication>)ViewData["Top5Posts"];
+                            foreach (var variable in top5Post)
+                            {
+                                i++;
+                                switch (i)
+                                {
+                                    case 1: t = "text text-danger"; break;
+                                    case 2: t = "text text-warning"; break;
+                                    case 3: t = "text text-success"; break;
+                                    default: t = "text text-primary"; break;
+                                }
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <a href="@Url.Action("Details", "Publication", new {id = variable.Id})">
+                                            <div>
+                                                <div style="font-size: larger" class="@t">
+                                                    <span class="badge-1">@Math.Round(variable.Rate, 2)</span>
+                                                    @*@variable.Title*@
+                                                    @if (variable.Title.Length > 10)
+                                                    {
+                                                        @Html.Raw(@variable.Title.Substring(0, 9) + "...")
+
+                                                    }
+                                                    else
+                                                    {
+                                                        @Html.Raw(@variable.Title);
+                                                    }
+                                                </div>
+
+                                            </div>
+
+                                        </a>
+                                    </div>
+                                    <div style="font-size: larger" class="col-md-1 @t">от </div>
+                                    <div class="col-md-4">
+                                        <div style="font-size: larger" class="@t">
+                                            <a href="@Url.Action("Details", "Profile", new {id = variable.UserId})">
+
+                                                <div class="@t">
+                                                    @{
+                                var firstOrDefault = users.FirstOrDefault(x => x.Id == variable.UserId);
+                                                    }
+                                                    @if (firstOrDefault != null)
+                                                    {
+                                                        @firstOrDefault.Name
+                                                    }
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+
+                    </div>
+                    <div class="col-md-4">
+                        <h2 class="text-center">Top 5 comments</h2>
+                        @{
+                            var top5Comments = (List<Comment>)ViewData["Top5Comments"];
+                            i = 0;
+                            //var top5Post = (List<Publication>)ViewData["Top5Posts"];
+                            foreach (var variable in top5Comments)
+                            {
+                                i++;
+                                switch (i)
+                                {
+                                    case 1: t = "text text-danger"; break;
+                                    case 2: t = "text text-warning"; break;
+                                    case 3: t = "text text-success"; break;
+                                    default: t = "text text-primary"; break;
+                                }
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <a href="@Url.Action("Details", "Publication", new {id = variable.IdPublication})@Html.Raw("#text"+variable.Id)">
+                                            <div>
+                                                <div style="font-size: larger" class="@t">
+                                                    <span class="badge-1">@variable.Rate</span>
+                                                    @*@variable.Text*@
+                                                    @if (variable.Text.Length > 10)
+                                                    {
+                                                        @Html.Raw(@variable.Text.Substring(0, 9) + "...")
+
+                                                    }
+                                                    else
+                                                    {
+                                                        @Html.Raw(@variable.Text);
+                                                    }
+                                                </div>
+
+                                            </div>
+
+                                        </a>
+                                    </div>
+                                    <div style="font-size: larger" class="col-md-1 @t">от </div>
+                                    <div class="col-md-4">
+                                        <div style="font-size: larger" class="@t">
+                                            <a href="@Url.Action("Details", "Profile", new {id = variable.IdUser})">
+
+                                                <div class="@t">
+                                                    @{
+                                var firstOrDefault = users.FirstOrDefault(x => x.Id == variable.IdUser);
+                                                    }
+                                                    @if (firstOrDefault != null)
+                                                    {
+                                                        @firstOrDefault.Name
+                                                    }
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <!--c#-->
+                        <div>
+                            <h2 class="text-center">Top #5 C# posts</h2>
+
+                            @{
+
+                                i = 0;
+                                var top5CSharpPost = (List<Publication>)ViewData["Top5C#"];
+                                foreach (var variable in top5CSharpPost)
+                                {
+                                    i++;
+                                    switch (i)
+                                    {
+                                        case 1: t = "text text-danger"; break;
+                                        case 2: t = "text text-warning"; break;
+                                        case 3: t = "text text-success"; break;
+                                        default: t = "text text-primary"; break;
+                                    }
+                                    <div class="row">
+                                        <div class="col-md-7">
+                                            <a href="@Url.Action("Details", "Publication", new {id = variable.Id})">
+                                                <div>
+                                                    <div style="font-size: larger" class="@t">
+                                                        <span class="badge-1">@Math.Round(variable.Rate, 2)</span>
+                                                        @if (variable.Title.Length > 26)
+                                                        {
+                                                            @Html.Raw(@variable.Title.Substring(0, 25) + "...")
+
+                                                        }
+                                                        else
+                                                        {
+                                                            @Html.Raw(@variable.Title);
+                                                        }
+
+                                                    </div>
+
+                                                </div>
+
+                                            </a>
+                                        </div>
+                                        <div style="font-size: larger" class="col-md-1 @t">от </div>
+                                        <div class="col-md-4">
+                                            <div style="font-size: larger" class="@t">
+                                                <a href="@Url.Action("Details", "Profile", new {id = variable.UserId})">
+
+                                                    <div class="@t">
+                                                        @{
+                                    var firstOrDefault = users.FirstOrDefault(x => x.Id == variable.UserId);
+                                                        }
+                                                        @if (firstOrDefault != null)
+                                                        {
+                                                            @firstOrDefault.Name
+                                                        }
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                            }
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!--java-->
+                        <div>
+                            <h2 class="text-center">Top #5 Java posts</h2>
+
+                            @{
+
+                                i = 0;
+                                var top5JavaPost = (List<Publication>)ViewData["Top5Java"];
+                                foreach (var variable in top5JavaPost)
+                                {
+                                    i++;
+                                    switch (i)
+                                    {
+                                        case 1: t = "text text-danger"; break;
+                                        case 2: t = "text text-warning"; break;
+                                        case 3: t = "text text-success"; break;
+                                        default: t = "text text-primary"; break;
+                                    }
+                                    <div class="row">
+                                        <div class="col-md-7">
+                                            <a href="@Url.Action("Details", "Publication", new {id = variable.Id})">
+                                                <div>
+                                                    <div style="font-size: larger" class="@t">
+                                                        <span class="badge-1">@variable.Rate</span>
+                                                        @if (variable.Title.Length > 26)
+                                                        {
+                                                            @Html.Raw(@variable.Title.Substring(0, 25) + "...")
+
+                                                        }
+                                                        else
+                                                        {
+                                                            @Html.Raw(@variable.Title);
+                                                        }
+
+                                                    </div>
+
+                                                </div>
+
+                                            </a>
+                                        </div>
+                                        <div style="font-size: larger" class="col-md-1 @t">от </div>
+                                        <div class="col-md-4">
+                                            <div style="font-size: larger" class="@t">
+                                                <a href="@Url.Action("Details", "Profile", new {id = variable.UserId})">
+
+                                                    <div class="@t">
+                                                        @{
+                                    var firstOrDefault = users.FirstOrDefault(x => x.Id == variable.UserId);
+                                                        }
+                                                        @if (firstOrDefault != null)
+                                                        {
+                                                            @firstOrDefault.Name
+                                                        }
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div>
+                            <h2 class="text-center">Top #5 Python posts</h2>
+
+                            @{
+
+                                i = 0;
+                                var top5Python = (List<Publication>)ViewData["Top5Python"];
+                                foreach (var variable in top5Python)
+                                {
+                                    i++;
+                                    switch (i)
+                                    {
+                                        case 1: t = "text text-danger"; break;
+                                        case 2: t = "text text-warning"; break;
+                                        case 3: t = "text text-success"; break;
+                                        default: t = "text text-primary"; break;
+                                    }
+                                    <div class="row">
+                                        <div class="col-md-7">
+                                            <a href="@Url.Action("Details", "Publication", new {id = variable.Id})">
+                                                <div>
+                                                    <div style="font-size: larger" class="@t">
+                                                        <span class="badge-1">@Math.Round(variable.Rate, 2)</span>
+                                                        @if (variable.Title.Length > 26)
+                                                        {
+                                                            @Html.Raw(@variable.Title.Substring(0, 25) + "...")
+
+                                                        }
+                                                        else
+                                                        {
+                                                            @Html.Raw(@variable.Title);
+                                                        }
+
+                                                    </div>
+
+                                                </div>
+
+                                            </a>
+                                        </div>
+                                        <div style="font-size: larger" class="col-md-1 @t">от </div>
+                                        <div class="col-md-4">
+                                            <div style="font-size: larger" class="@t">
+                                                <a href="@Url.Action("Details", "Profile", new {id = variable.UserId})">
+
+                                                    <div class="@t">
+                                                        @{
+                                    var firstOrDefault = users.FirstOrDefault(x => x.Id == variable.UserId);
+                                                        }
+                                                        @if (firstOrDefault != null)
+                                                        {
+                                                            @firstOrDefault.Name
+                                                        }
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                            }
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div>
+                            <h2 class="text-center">Top #5 Ruby posts</h2>
+
+                            @{
+
+                                i = 0;
+                                var top5Ruby = (List<Publication>)ViewData["Top5Ruby"];
+                                foreach (var variable in top5Ruby)
+                                {
+                                    i++;
+                                    switch (i)
+                                    {
+                                        case 1: t = "text text-danger"; break;
+                                        case 2: t = "text text-warning"; break;
+                                        case 3: t = "text text-success"; break;
+                                        default: t = "text text-primary"; break;
+                                    }
+                                    <div class="row">
+                                        <div class="col-md-7">
+                                            <a href="@Url.Action("Details", "Publication", new {id = variable.Id})">
+                                                <div>
+                                                    <div style="font-size: larger" class="@t">
+                                                        <span class="badge-1">@Math.Round(variable.Rate, 2)</span>
+                                                        @if (variable.Title.Length > 26)
+                                                        {
+                                                            @Html.Raw(@variable.Title.Substring(0, 26) + "...")
+
+                                                        }
+                                                        else
+                                                        {
+                                                            @Html.Raw(@variable.Title);
+                                                        }
+
+                                                    </div>
+
+                                                </div>
+
+                                            </a>
+                                        </div>
+                                        <div style="font-size: larger" class="col-md-1 @t">от </div>
+                                        <div class="col-md-4">
+                                            <div style="font-size: larger" class="@t">
+                                                <a href="@Url.Action("Details", "Profile", new {id = variable.UserId})">
+
+                                                    <div class="@t">
+                                                        @{
+                                    var firstOrDefault = users.FirstOrDefault(x => x.Id == variable.UserId);
+                                                        }
+                                                        @if (firstOrDefault != null)
+                                                        {
+                                                            @firstOrDefault.Name
+                                                        }
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                            }
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--rating-->
+<h3>Публикации</h3>
+
+ @{
+     var listPublications = (List<Publication>)ViewData["AllPublication"];
+          var  publications=    listPublications.OrderByDescending(x => x.Id).ToList();
+     i = 0;
+     foreach (var variable in publications)
+     {
+         <div class="well-1 well-sm">
+             <div class="row">
+                 <div class="col-md-2" style="margin-top: 0.4%">
+                     <img id="" src="../../Images/starOn.png" alt="" />
+                     @if (variable.Rate >= 2)
+                     {
+                         <img id="" src="../../Images/starOn.png" alt="" />
+                     }
+                     else
+                     {
+                         <img id="" src="../../Images/starOff.png" alt="" />
+                     }
+                     @if (variable.Rate >= 3)
+                     {
+                         <img id="" src="../../Images/starOn.png" alt="" />
+                     }
+                     else
+                     {
+                         <img id="" src="../../Images/starOff.png" alt="" />
+                     }
+                     @if (variable.Rate >= 4)
+                     {
+                         <img id="" src="../../Images/starOn.png" alt="" />
+                     }
+                     else
+                     {
+                         <img id="" src="../../Images/starOff.png" alt="" />
+                     }
+                     @if (variable.Rate > 4.9)
+                     {
+                         <img id="" src="../../Images/starOn.png" alt="" />
+                     }
+                     else
+                     {
+                         <img id="" src="../../Images/starOff.png" alt="" />
+                     }
+                 </div>
+                 <div class="col-md-3">
+                     <label class="text-info" style="margin-top: 2.7%">
+                         @if (variable.Title.Length > 30)
+                         {
+                             @Html.Raw(@variable.Title.Substring(0, 29) + "...")
+
+                         }
+                         else
+                         {
+                             @Html.Raw(@variable.Title)
+                             ;
+                         }
+                     </label>
+
+                 </div>
+                 <div class="col-md-4" style="margin-top: 0.5%">
+                     @{
+                         var code10Chars = "";
+                         i = 0;
+                         foreach (var VARIABLE in variable.Code.Replace("\r\n", ""))
+                         {
+
+                             if (i < 40)
+                             {
+                                 code10Chars += VARIABLE;
+                             }
+                             else
+                             {
+                                 break;
+                             }
+                             i++;
+                         }
+                     } 
+                     <pre class="prettyprint" style="margin-bottom: -10%"> @(code10Chars)...... </pre>
+                 </div>
+                 <div class="col-md-1" style="margin-top: 0.5%">
+                     @{
+                         var listComments = (List<Comment>)ViewData["Comments"];
+                         var count = listComments.Count(x => x.IdPublication == variable.Id);
+                     } 
+                     Comments:@count
+
+                 </div>
+                 <div class="col-md-1">
+                     <label style="margin-top: 8.5%" class="text-info">@(variable.Date.Day).@(variable.Date.Month).@variable.Date.Year </label>
+                 </div>
+
+                 <div class="col-md-1">
+                     <a href="@Url.Action("Details", "Publication", new {id = variable.Id})" class="btn btn-link text-info">Info</a>
+                 </div>
+             </div>
+         </div> 
+         i++;
+     }
+ }
+
+<nav>
+    <ul class="pager">
+        <li class="previous"><a href="@Url.Action("Index",new {page=(int)ViewData["Page"]-1})"><span aria-hidden="true">&larr;</span> New</a></li>
+        <li class="next"><a href="@Url.Action("Index",new {page=(int)ViewData["Page"]+1})">Older <span aria-hidden="true">&rarr;</span></a></li>
+    </ul>
+</nav>
+<!--Tags-->

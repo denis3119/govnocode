@@ -1,0 +1,107 @@
+﻿@using govnocode.Models
+@model IEnumerable<govnocode.Models.Publication>
+
+@{
+    ViewBag.Title = "Tag";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+
+@{
+    var publications = (List<Publication>)ViewData["Pub"];
+    <h3>Найдено публикаций:@publications.Count</h3>
+    foreach (var variable in publications)
+    {
+            @*<div>@variable.Title </div>
+                <a href="@Url.Action("Details","Publication",new {id=variable.Id})">33</a>*@
+        <div class="well-1 well-sm">
+            <div class="row">
+                <div class="col-md-2" style="margin-top: 0.4%">
+                    <img id="" src="../../Images/starOn.png" alt=""/>
+                    @if (variable.Rate >= 2)
+                    {
+                        <img id="" src="../../Images/starOn.png" alt=""/>
+                    }
+                    else
+                    {
+                        <img id="" src="../../Images/starOff.png" alt=""/>
+                    }
+                    @if (variable.Rate >= 3)
+                    {
+                        <img id="" src="../../Images/starOn.png" alt=""/>
+                    }
+                    else
+                    {
+                        <img id="" src="../../Images/starOff.png" alt=""/>
+                    }
+                    @if (variable.Rate >= 4)
+                    {
+                        <img id="" src="../../Images/starOn.png" alt=""/>
+                    }
+                    else
+                    {
+                        <img id="" src="../../Images/starOff.png" alt=""/>
+                    }
+                    @if (variable.Rate > 4.9)
+                    {
+                        <img id="" src="../../Images/starOn.png" alt=""/>
+                    }
+                    else
+                    {
+                        <img id="" src="../../Images/starOff.png" alt=""/>
+                    }
+                </div>
+                <div class="col-md-3">
+                    <label class="text-info" style="margin-top: 2.7%">
+                        @if (variable.Title.Length > 30)
+                        {
+                            @Html.Raw(@variable.Title.Substring(0, 29) + "...")
+
+                        }
+                        else
+                        {
+                            @Html.Raw(@variable.Title)
+                            ;
+                        }
+                    </label>
+
+                </div>
+                <div class="col-md-4" style="margin-top: 0.5%">
+                    @{
+                        var code10Chars = "";
+                        var i = 0;
+                        foreach (var VARIABLE in variable.Code.Replace("\r\n", ""))
+                        {
+
+                            if (i < 40)
+                            {
+                                code10Chars += VARIABLE;
+                            }
+                            else
+                            {
+                                break;
+                            }
+                            i++;
+                        }
+                    }
+                    <pre class="prettyprint" style="margin-bottom: -10%"> @code10Chars...... </pre>
+                </div>
+                <div class="col-md-2" style="margin-top: 0.5%">
+                    @{
+                        var listComments = (List<Comment>) ViewData["Comments"];
+                        var count = listComments.Count(x => x.IdPublication == variable.Id);
+                    }
+                    Comments:@count
+
+                </div>
+
+                <div class="col-md-1">
+                    <a href="@Url.Action("Details", "Publication", new {id = variable.Id})" class="btn btn-link text-info">Info</a>
+                </div>
+            </div>
+        </div>
+    }
+}
+
+</body>
