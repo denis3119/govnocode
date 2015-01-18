@@ -61,6 +61,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string _3 {
+            get {
+                return ResourceManager.GetString("3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to О....
+        /// </summary>
+        public static string About {
+            get {
+                return ResourceManager.GetString("About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Вы действительно хотите удалить пользователя?.
         /// </summary>
         public static string AdminDeleteText {
@@ -196,6 +214,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Связь.
+        /// </summary>
+        public static string Contact {
+            get {
+                return ResourceManager.GetString("Contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Создание.
         /// </summary>
         public static string Create {
@@ -324,9 +351,27 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Главная.
         /// </summary>
+        public static string Home {
+            get {
+                return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Главная.
+        /// </summary>
         public static string HomeTitle {
             get {
                 return ResourceManager.GetString("HomeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to в теме:.
+        /// </summary>
+        public static string InPublication {
+            get {
+                return ResourceManager.GetString("InPublication", resourceCulture);
             }
         }
         
@@ -417,6 +462,15 @@ namespace Resources {
         public static string MyPublication {
             get {
                 return ResourceManager.GetString("MyPublication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Мега проект.
+        /// </summary>
+        public static string NameProject {
+            get {
+                return ResourceManager.GetString("NameProject", resourceCulture);
             }
         }
         
@@ -543,6 +597,42 @@ namespace Resources {
         public static string Save {
             get {
                 return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Поиск.
+        /// </summary>
+        public static string Search {
+            get {
+                return ResourceManager.GetString("Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Найдено комментариев.
+        /// </summary>
+        public static string SearchComments {
+            get {
+                return ResourceManager.GetString("SearchComments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Найдено публикаций.
+        /// </summary>
+        public static string SearchPublication {
+            get {
+                return ResourceManager.GetString("SearchPublication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Теги.
+        /// </summary>
+        public static string Tags {
+            get {
+                return ResourceManager.GetString("Tags", resourceCulture);
             }
         }
         
