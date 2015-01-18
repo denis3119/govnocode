@@ -1,19 +1,21 @@
 ﻿@using govnocode.Models
+@using Resources
 @model govnocode.Models.Publication
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = @Resource.Create;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Create</h2>
 @using (Html.BeginForm())
 {
-    @Html.AntiForgeryToken()    <div class="form-horizontal">
-        <h4>Publication</h4>
+    @Html.AntiForgeryToken()
+<div class="form-horizontal">
+        <h4>@Resource.Publication</h4>
         <hr />
         <div class="form-group">
-            <label class="control-label col-md-1">Language</label>
+            <label class="control-label col-md-1">@Resource.Lang</label>
             <div class="col-md-10">
                 <select name="Lang" class="form-control">
                     <option value="C#">C#</option>
@@ -67,11 +69,11 @@
                                     
            <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" id="publication" value="Create" class="btn btn-default" />
+                <input type="submit" id="publication" value="@Resource.Create" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink(Resource.BackToList, "Index")
 </div>

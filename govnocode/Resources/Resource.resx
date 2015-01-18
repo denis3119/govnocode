@@ -244,6 +244,38 @@
   <data name="User" xml:space="preserve">
     <value>Пользователь</value>
   </data>
+  <data name="Blocked" xml:space="preserve">
+    <value>Заблокирован</value>
+  </data>
+  <data name="ChangePass" xml:space="preserve">
+    <value>Управление паролем</value>
+  </data>
+  <data name="ChangePassForm" xml:space="preserve">
+    <value>Форма для изменения пароля</value>
+  </data>
+  <data name="ChangeYourAccountSettings" xml:space="preserve">
+    <value>Управление пользовательскими данными</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Комментарии</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Создание</value>
+  </data>
+  <data name="CreateLocalLogin" xml:space="preserve">
+    <value>Создание профиля</value>
+  </data>
+  <data name="drrf" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ErrorPass" xml:space="preserve">
+    <value>Вы не имеете профиля на этом сайте.</value>
+    <comment>You do not have a local username/password for this site. Add a local
+    account so you can log in without an external login.</comment>
+  </data>
+  <data name="Manage" xml:space="preserve">
+    <value>Управление</value>
+  </data>
   <data name="New" xml:space="preserve">
     <value>Новее</value>
   </data>
@@ -251,6 +283,9 @@
     <value>Старее</value>
   </data>
   <data name="Publication" xml:space="preserve">
+    <value>Публикация</value>
+  </data>
+  <data name="Publications" xml:space="preserve">
     <value>Публикации</value>
   </data>
   <data name="Top5Python" xml:space="preserve">

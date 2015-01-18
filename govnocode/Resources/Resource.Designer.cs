@@ -142,11 +142,38 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Закрыть.
+        /// </summary>
+        public static string Close {
+            get {
+                return ResourceManager.GetString("Close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Листинг.
+        /// </summary>
+        public static string Code {
+            get {
+                return ResourceManager.GetString("Code", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Подтверждение почты.
         /// </summary>
         public static string ComfimEmailTitle {
             get {
                 return ResourceManager.GetString("ComfimEmailTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Комментарии.
+        /// </summary>
+        public static string Comments {
+            get {
+                return ResourceManager.GetString("Comments", resourceCulture);
             }
         }
         
@@ -169,11 +196,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Создание.
+        /// </summary>
+        public static string Create {
+            get {
+                return ResourceManager.GetString("Create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Создание профиля.
         /// </summary>
         public static string CreateLocalLogin {
             get {
                 return ResourceManager.GetString("CreateLocalLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Написать.
+        /// </summary>
+        public static string CreatePost {
+            get {
+                return ResourceManager.GetString("CreatePost", resourceCulture);
             }
         }
         
@@ -196,11 +241,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string drrf {
+            get {
+                return ResourceManager.GetString("drrf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Редактирование.
         /// </summary>
         public static string Edit {
             get {
                 return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Редактирование комментария.
+        /// </summary>
+        public static string EditComment {
+            get {
+                return ResourceManager.GetString("EditComment", resourceCulture);
             }
         }
         
@@ -349,6 +412,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Мои публикации.
+        /// </summary>
+        public static string MyPublication {
+            get {
+                return ResourceManager.GetString("MyPublication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Новее.
         /// </summary>
         public static string New {
@@ -367,11 +439,20 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Публикации.
+        ///   Looks up a localized string similar to Публикация.
         /// </summary>
         public static string Publication {
             get {
                 return ResourceManager.GetString("Publication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Публикации.
+        /// </summary>
+        public static string Publications {
+            get {
+                return ResourceManager.GetString("Publications", resourceCulture);
             }
         }
         

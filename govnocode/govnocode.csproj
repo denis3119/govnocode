@@ -434,9 +434,7 @@
     <Content Include="Views\Publication\Details.cshtml" />
     <Content Include="Views\Publication\Edit.cshtml" />
     <Content Include="Views\Publication\Delete.cshtml" />
-    <Content Include="Views\Publication\createcom.cshtml" />
     <Content Include="Views\Profile\Details.cshtml" />
-    <Content Include="Views\Publication\rwerfewrewrwe.cshtml" />
     <Content Include="Views\Tag\Tag.cshtml" />
     <Content Include="Views\Tag\Index.cshtml" />
     <Content Include="Views\Search\Index.cshtml" />
