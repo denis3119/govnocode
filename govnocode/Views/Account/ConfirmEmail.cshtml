@@ -1,10 +1,11 @@
-﻿@{
-    ViewBag.Title = "Confirm Email";
+﻿@using System.Resources
+@{
+    ViewBag.Title = @Resources.Resource.ComfimEmailTitle;
 }
 
-<h2>@ViewBag.Title.</h2>
+<h2>@ViewBag.Title</h2>
 <div>
     <p>
-        Thank you for confirming your email. Please @Html.ActionLink("Click here to Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+        @Resources.Resource.ConfimEmailText @Html.ActionLink(@Resources.Resource.ConfimEmailTextLink, "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
     </p>
 </div>

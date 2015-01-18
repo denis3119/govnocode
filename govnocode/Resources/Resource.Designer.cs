@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Res {
+namespace Resources {
     using System;
     
     
@@ -36,7 +36,7 @@ namespace Res {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("govnocode.Resources.Resource", typeof(Resource).Assembly);
@@ -51,7 +51,7 @@ namespace Res {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,11 +61,227 @@ namespace Res {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Подтверждение почты.
+        /// </summary>
+        public static string ComfimEmailTitle {
+            get {
+                return ResourceManager.GetString("ComfimEmailTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Спасибо за подтверждения вашей почты. Пожалуйста .
+        /// </summary>
+        public static string ConfimEmailText {
+            get {
+                return ResourceManager.GetString("ConfimEmailText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Нажмите для входа.
+        /// </summary>
+        public static string ConfimEmailTextLink {
+            get {
+                return ResourceManager.GetString("ConfimEmailTextLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Отправить ссылку.
+        /// </summary>
+        public static string ForgotPassBtnText {
+            get {
+                return ResourceManager.GetString("ForgotPassBtnText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Введите свой email.
+        /// </summary>
+        public static string ForgotPassEnterYourEmail {
+            get {
+                return ResourceManager.GetString("ForgotPassEnterYourEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Пожалуйста проверьте свой email для восстановления пароля..
+        /// </summary>
+        public static string ForgotPassText {
+            get {
+                return ResourceManager.GetString("ForgotPassText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Забыли пароль?.
+        /// </summary>
+        public static string ForgotPassTitle {
+            get {
+                return ResourceManager.GetString("ForgotPassTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Восстановление пароля.
+        /// </summary>
+        public static string ForgotPassTitle2 {
+            get {
+                return ResourceManager.GetString("ForgotPassTitle2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Язык.
         /// </summary>
         public static string Lang {
             get {
                 return ResourceManager.GetString("Lang", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Вход.
+        /// </summary>
+        public static string LoginBtnLogin {
+            get {
+                return ResourceManager.GetString("LoginBtnLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string LoginEmail {
+            get {
+                return ResourceManager.GetString("LoginEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Пароль.
+        /// </summary>
+        public static string LoginPass {
+            get {
+                return ResourceManager.GetString("LoginPass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Забыли пароль?.
+        /// </summary>
+        public static string LoginRegisterForgoutPass {
+            get {
+                return ResourceManager.GetString("LoginRegisterForgoutPass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Создать нового пользователя.
+        /// </summary>
+        public static string LoginRegisterNewUser {
+            get {
+                return ResourceManager.GetString("LoginRegisterNewUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Вход.
+        /// </summary>
+        public static string LoginTitle {
+            get {
+                return ResourceManager.GetString("LoginTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Используйте свой логин для входа.
+        /// </summary>
+        public static string LoginUseLogin {
+            get {
+                return ResourceManager.GetString("LoginUseLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Создание нового профиля.
+        /// </summary>
+        public static string RegisterCreateNewAccount {
+            get {
+                return ResourceManager.GetString("RegisterCreateNewAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Регистрация.
+        /// </summary>
+        public static string RegisterRegister {
+            get {
+                return ResourceManager.GetString("RegisterRegister", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Успешная регистрация.
+        /// </summary>
+        public static string RegisterSuccess {
+            get {
+                return ResourceManager.GetString("RegisterSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Проверьте свою почту.
+        /// </summary>
+        public static string RegisterSuccessCheckEmail {
+            get {
+                return ResourceManager.GetString("RegisterSuccessCheckEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Регистрация.
+        /// </summary>
+        public static string RegisterTitle {
+            get {
+                return ResourceManager.GetString("RegisterTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Сброс.
+        /// </summary>
+        public static string ResetBtnReset {
+            get {
+                return ResourceManager.GetString("ResetBtnReset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ваш пароль сброшен..
+        /// </summary>
+        public static string ResetPassConfimationText {
+            get {
+                return ResourceManager.GetString("ResetPassConfimationText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Сброс пароля.
+        /// </summary>
+        public static string ResetPassConfimationTitle {
+            get {
+                return ResourceManager.GetString("ResetPassConfimationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Сброс пароля.
+        /// </summary>
+        public static string ResetPassTitle {
+            get {
+                return ResourceManager.GetString("ResetPassTitle", resourceCulture);
             }
         }
     }

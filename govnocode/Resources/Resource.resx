@@ -117,7 +117,74 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ComfimEmailTitle" xml:space="preserve">
+    <value>Подтверждение почты</value>
+  </data>
+  <data name="ConfimEmailText" xml:space="preserve">
+    <value>Спасибо за подтверждения вашей почты. Пожалуйста </value>
+  </data>
+  <data name="ConfimEmailTextLink" xml:space="preserve">
+    <value>Нажмите для входа</value>
+  </data>
+  <data name="ForgotPassBtnText" xml:space="preserve">
+    <value>Отправить ссылку</value>
+    <comment>Email Link</comment>
+  </data>
+  <data name="ForgotPassEnterYourEmail" xml:space="preserve">
+    <value>Введите свой email</value>
+  </data>
+  <data name="ForgotPassText" xml:space="preserve">
+    <value>Пожалуйста проверьте свой email для восстановления пароля.</value>
+  </data>
+  <data name="ForgotPassTitle" xml:space="preserve">
+    <value>Забыли пароль?</value>
+  </data>
+  <data name="ForgotPassTitle2" xml:space="preserve">
+    <value>Восстановление пароля</value>
+  </data>
   <data name="Lang" xml:space="preserve">
     <value>Язык</value>
+  </data>
+  <data name="LoginBtnLogin" xml:space="preserve">
+    <value>Вход</value>
+  </data>
+  <data name="LoginEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="LoginPass" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="LoginRegisterForgoutPass" xml:space="preserve">
+    <value>Забыли пароль?</value>
+  </data>
+  <data name="LoginRegisterNewUser" xml:space="preserve">
+    <value>Создать нового пользователя</value>
+  </data>
+  <data name="LoginTitle" xml:space="preserve">
+    <value>Вход</value>
+  </data>
+  <data name="LoginUseLogin" xml:space="preserve">
+    <value>Используйте свой логин для входа</value>
+  </data>
+  <data name="RegisterCreateNewAccount" xml:space="preserve">
+    <value>Создание нового профиля</value>
+  </data>
+  <data name="RegisterRegister" xml:space="preserve">
+    <value>Регистрация</value>
+  </data>
+  <data name="RegisterSuccess" xml:space="preserve">
+    <value>Успешная регистрация</value>
+  </data>
+  <data name="RegisterSuccessCheckEmail" xml:space="preserve">
+    <value>Проверьте свою почту</value>
+  </data>
+  <data name="RegisterTitle" xml:space="preserve">
+    <value>Регистрация</value>
+  </data>
+  <data name="ResetBtnReset" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ResetPassTitle" xml:space="preserve">
+    <value>Сброс пароля</value>
   </data>
 </root>
