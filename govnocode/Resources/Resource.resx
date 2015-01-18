@@ -117,6 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AdminDeleteText" xml:space="preserve">
+    <value>Вы действительно хотите удалить пользователя?</value>
+  </data>
+  <data name="AdminDeleteTitle" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="AdminDeleteUserText" xml:space="preserve">
+    <value>Пользователь</value>
+  </data>
+  <data name="AdminIndex" xml:space="preserve">
+    <value>Список пользователей</value>
+  </data>
+  <data name="BackToList" xml:space="preserve">
+    <value>Вернуться к списку</value>
+  </data>
   <data name="ComfimEmailTitle" xml:space="preserve">
     <value>Подтверждение почты</value>
   </data>
@@ -125,6 +140,15 @@
   </data>
   <data name="ConfimEmailTextLink" xml:space="preserve">
     <value>Нажмите для входа</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Подробнее</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Редактирование</value>
   </data>
   <data name="ForgotPassBtnText" xml:space="preserve">
     <value>Отправить ссылку</value>
@@ -182,9 +206,21 @@
     <value>Регистрация</value>
   </data>
   <data name="ResetBtnReset" xml:space="preserve">
-    <value />
+    <value>Сброс</value>
+  </data>
+  <data name="ResetPassConfimationText" xml:space="preserve">
+    <value>Ваш пароль сброшен.</value>
+  </data>
+  <data name="ResetPassConfimationTitle" xml:space="preserve">
+    <value>Сброс пароля</value>
   </data>
   <data name="ResetPassTitle" xml:space="preserve">
     <value>Сброс пароля</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Пользователь</value>
   </data>
 </root>

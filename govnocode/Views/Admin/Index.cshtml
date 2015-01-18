@@ -1,11 +1,12 @@
-﻿@model IEnumerable<govnocode.Models.ApplicationUser>
+﻿@using Resources
+@model IEnumerable<govnocode.Models.ApplicationUser>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = @Resource.AdminIndex;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>@Resource.AdminIndex</h2>
 
 
 <table class="table">
@@ -46,9 +47,9 @@
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink(Resource.Edit, "Edit", new { id=item.Id }) |
+            @Html.ActionLink(Resource.Details, "Details", new { id=item.Id }) |
+            @Html.ActionLink(Resource.Delete, "Delete", new { id=item.Id })
         </td>
     </tr>
 }

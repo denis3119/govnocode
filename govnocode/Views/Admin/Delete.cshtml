@@ -1,15 +1,14 @@
-﻿@model govnocode.Models.ApplicationUser
+﻿@using Resources
+@model govnocode.Models.ApplicationUser
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title =@Resource.AdminDeleteTitle;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
+<h3>@Resource.AdminDeleteText</h3>
 <div>
-    <h4>ApplicationUser</h4>
+    <h4>@Resource.AdminDeleteUserText</h4>
     <hr/>
 @using (Html.BeginForm())
 {
@@ -40,8 +39,8 @@
 
 
         <div class="form-actions no-color">
-            <input type="submit" id="userName" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" id="userName" value="@Resource.Delete" class="btn btn-default" /> |
+            @Html.ActionLink(Resource.BackToList, "Index")
         </div>
     }
 </div>
