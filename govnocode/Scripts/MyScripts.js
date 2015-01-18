@@ -492,6 +492,7 @@ function setImageLink() {
         }
     });
 }
+var linkcomment;
 function viewcomment(data) {
 
         var res = "";
@@ -501,14 +502,21 @@ function viewcomment(data) {
 
                 var attr = data[index];
                 var id = attr["Id"];
+                var userid = attr["IdUser"];
+                var userName = attr["UserName"];
+                var text = attr["Text"];
+
+
+
                 var upfunc = "up(" + id + ");";
                 
                 var idedit = "edit" + id;
                 requestEdit(id);
-                var downfunc = "down(" + attr["Id"] + ");";
-                var idcomment = "comm" + attr["Id"];
-                var idtext = "text" + attr["Id"];
-                var idimg = "img" + attr["Id"];
+                var downfunc = "down(" +id + ");";
+                var idcomment = "comm" + id;
+                var idtext = "text" + id;
+
+                var idimg = "img" + id;
                 var x2 = attr["Date"];
                 var x = [{ "id": 1, "start": x2 }];
 
@@ -523,7 +531,8 @@ function viewcomment(data) {
 
                 var edit = "<tr ><td><a><img  style=\"display:none\" id=\"" + idedit + "\" onclick=\"editComment('" + id + "');\" src=\"../../Images/edit.png\" alt=\"\"/></a></td></tr>";
 
-                var dateAndTime = "<div style=\"margin-left:86%;\"><label class=\"text text-info\">" + addZero(date.getHours()).toString() + "." + addZero(date.getMinutes("")).toString() + "</label> <label class=\"text text-muted\">" + date.getDate().toString() + "." + addZero(date.getUTCMonth() + 1).toString()
+                var dateAndTime = "<div style=\"margin-left:86%;\"><label class=\"text text-info\">" + addZero(date.getHours()).toString() + "." + addZero(date.getMinutes("")).toString() + "</label> <label class=\"text text-muted\">"
+                    + date.getDate().toString() + "." + addZero(date.getUTCMonth() + 1).toString()
                     + "." + date.getFullYear().toString() + "</label>"+edit+"</div>";
                 var voted = "";
                 var nameurl = "";
@@ -533,9 +542,9 @@ function viewcomment(data) {
                     upfunc = "";
                 } else {
                     voted = "";
-                    upfunc = "up(" + attr["Id"] + ");";
+                    upfunc = "up(" + id + ");";
                 }
-
+                GetUserLinkImage(userid,id);
                 var rate = "" +
                     "<table >" +
                     "<tr><a><img id=" + idimg + " " + voted + " onclick=" + upfunc + " src=\"../../Images/plus.png\" alt=\"\"/></a></tr>" +
@@ -544,8 +553,9 @@ function viewcomment(data) {
                     
                     "</table>";
 
-                nameurl += "<a style=\"margin-left:0%;\"  href=\"/Profile/details/" + attr["IdUser"] + "\"><img src=\"http://www.x-bikers.ru/forum/avatars/309593.gif\" alt=\"admin\" width=\"32\" height=\"32\" class=\"img-rounded\">" + attr["UserName"] + "</a>";
-                var row = rows(attr["Text"]);
+                nameurl += "<a style=\"margin-left:0%;\"  href=\"/Profile/details/" + userid + "\"><img id=\"img"+id+"\" src=\""+"\" alt=\"admin\" width=\"32\" height=\"32\" class=\"img-rounded\">"
+                    + userName + "</a>";
+                var row = rows(text);
                 res += "<div class=\"well-sm well-1\"  style=\"border: 1px;padding: 1px\">" +
                     "<div class=\"container row\">" +
                     "<div style=\"margin-top:0;\" id='" + id + "' class=\"col-lg-1 text-center\">" +
@@ -554,7 +564,7 @@ function viewcomment(data) {
                     "</div>" +
                     "<div class=\"col-lg-11\" style=\"max-width: 100%\">" + dateAndTime +
                     "<textarea id=\"" + idtext + "\" rows=\"" + row + "\" style=\"width: 100%; max-width: 100%\" readonly class=\" alert-info" + negative + " alert\">"
-                    + attr["Text"] + "</textarea>"+"</div>" +
+                    + text + "</textarea>"+"</div>" +
                     "</div>" +
                     "</div>";
             }
@@ -563,6 +573,7 @@ function viewcomment(data) {
 
 
     }
+
 
 function ChahgeImage()
 {
@@ -580,8 +591,32 @@ function rows(str) {
 
         if (setText > 10) setText = 4;
         return setText;
-    };
+};
 
+function SetLinkImg(data, id) {
+   // alert(id);
+    $("#img" + id).attr("src", data);
+}
+function GetUserLinkImage(id,idComment) {
+    $.ajax({
+        type: "POST",
+        url: "/Profile/GetLinkImage",
+        data: { id: id },
+        beforeSend: function () {
+            /* что-то сделать перед */
+        },
+        success: function (data) {
+            /* обработать результат */
+            // data3 = data
+            SetLinkImg(data,idComment);
+
+            //  viewcomment(data);
+        },
+        error: function () {
+            /* обработать ошибку */
+        }
+    });
+}
 
 
 //$("#TextView").attr("data-provide", "'markdown-preview");

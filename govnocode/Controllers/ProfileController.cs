@@ -68,5 +68,11 @@ namespace govnocode.Controllers
             user.LinkAvatar = image;
             userFunction.Update(user);
         }
+
+        [HttpPost]
+        public JsonResult GetLinkImage(string id)
+        {
+             return new JsonResult(){Data = new UsersFunction().GetById(id).LinkAvatar};
+        }
     }
 }
