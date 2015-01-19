@@ -553,7 +553,7 @@ function viewcomment(data) {
                     
                     "</table>";
 
-                nameurl += "<a style=\"margin-left:0%;\"  href=\"/Profile/details/" + userid + "\"><img id=\"img"+id+"\" src=\""+"\" alt=\"admin\" width=\"32\" height=\"32\" class=\"img-rounded\">"
+                nameurl += "<a style=\"margin-left:0%;\"  href=\"/Profile/details/" + userid + "\"><img id=\"aimg" + id + "\" src=\"" + "\" alt=\"admin\" width=\"32\" height=\"32\" class=\"img-rounded img-responsive\">"
                     + userName + "</a>";
                 var row = rows(text);
                 res += "<div class=\"well-sm well-1\"  style=\"border: 1px;padding: 1px\">" +
@@ -595,7 +595,7 @@ function rows(str) {
 
 function SetLinkImg(data, id) {
    // alert(id);
-    $("#img" + id).attr("src", data);
+    $("#aimg" + id).attr("src", data);
 }
 function GetUserLinkImage(id,idComment) {
     $.ajax({
