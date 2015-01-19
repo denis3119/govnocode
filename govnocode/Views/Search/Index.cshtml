@@ -111,6 +111,7 @@
     var comments = ((IEnumerable<Comment>)ViewData["Comments"]).ToList();
     var users = (List<ApplicationUser>)ViewData["Users"];
     var allPublication = (List<Publication>)ViewData["AllPublication"];
+    var userSearch = (List<ApplicationUser>)ViewData["UsersSearch"];
 }
 <h3>@Resource.SearchComments:@comments.Count</h3>
 @{
@@ -120,7 +121,7 @@
         <div class="well-1 well-sm">
             <div class="row ">
                 <div class="col-md-4">
-                    <a href="@Url.Action("Details", "Publication", new {id = variable.IdPublication})@Html.Raw("#text"+variable.Id)">
+                    <a href="@Url.Action("Details", "Publication", new {id = variable.IdPublication})@Html.Raw("#text" + variable.Id)">
                         <div>
                             <div style="font-size: larger" class="">
                                 <span class="badge-1">@variable.Rate</span>
@@ -131,7 +132,8 @@
                                 }
                                 else
                                 {
-                                    @Html.Raw(@variable.Text);
+                                    @Html.Raw(@variable.Text)
+                                    ;
                                 }
                             </div>
                         </div>
@@ -143,7 +145,7 @@
                         var variable2 = variable;
                         var publication = allPublication.First(x => x.Id == variable2.IdPublication);
                     }
-                       <a href="@Url.Action("Details","Publication",new{id=publication.Id})">@publication.Title</a>
+                    <a href="@Url.Action("Details", "Publication", new {id = publication.Id})">@publication.Title</a>
                 </div>
                 <div class="col-md-2">
                     <div style="font-size: larger" class="">
@@ -151,12 +153,12 @@
 
                             <div class="">
                                 @{
-                                var variable1 = variable;
-                                var firstOrDefault = users.FirstOrDefault(x => x.Id == variable1.IdUser);
+                                    var variable1 = variable;
+                                    var firstOrDefault = users.FirstOrDefault(x => x.Id == variable1.IdUser);
                                 }
                                 @if (firstOrDefault != null)
                                 {
-                                    @Html.Raw("от ")@firstOrDefault.Name
+                                    @Html.Raw(" ")@firstOrDefault.Name
                                 }
                             </div>
                         </a>

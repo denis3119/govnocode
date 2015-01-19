@@ -25,8 +25,17 @@ namespace govnocode.Controllers
         // GET: Profile
         public ActionResult Details(string id="")
         {
+            
             var dbContext = new ApplicationDbContext();
-            if (id == "") id= User.Identity.GetUserId();
+            if (id == "")
+            {
+                if (!User.Identity.IsAuthenticated)
+                {
+                    dbContext.Dispose();
+                    return RedirectToAction("Index", "Home");
+                }
+                id= User.Identity.GetUserId();
+            }
             var publicationList=dbContext.Publications.Where(x => x.UserId == id).ToList();
             ViewData["Pub"] = publicationList.OrderByDescending(x=>x.Rate).ToList();
             ViewData["Comments"] = dbContext.Comments.ToList();
@@ -53,11 +62,6 @@ namespace govnocode.Controllers
             return true;
         }
 
-        private static bool CheckUrlValid(string source)
-        {
-            Uri uriResult;
-            return Uri.TryCreate(source, UriKind.Absolute, out uriResult) && uriResult.Scheme == Uri.UriSchemeHttp;
-        }
         [HttpPost]
         public void SetLinkImage(string image)
         {
