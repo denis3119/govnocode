@@ -48,6 +48,7 @@ namespace govnocode.Controllers
         public bool SetUserName(string name)
         {
            // var dbContext = new ApplicationDbContext();
+            if (name.Length > 15) return false;
             var users = new UsersFunction();
             if (!User.Identity.IsAuthenticated) return false;
             var userid = User.Identity.GetUserId();

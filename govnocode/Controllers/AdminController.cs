@@ -16,7 +16,7 @@ namespace govnocode.Controllers
     {
 
         private ApplicationUserManager _userManager;
-        private UsersFunction _usersFunction=new UsersFunction();
+        private readonly UsersFunction _usersFunction=new UsersFunction();
 
         private ApplicationUserManager UserManager
         {
@@ -40,6 +40,10 @@ namespace govnocode.Controllers
         public async Task<ViewResult> Edit(ApplicationUser user)
         {
             var error = _usersFunction.UsedName(user.Name);
+            if (user.Name.Length > 15)
+            {
+                return View(UserManager.FindById(user.Id));
+            }
             if (error)
             {
                 ModelState.AddModelError("", string.Format(Resources.Resource.name_already+"({0})",user.Name));
