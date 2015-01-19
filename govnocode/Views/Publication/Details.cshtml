@@ -24,7 +24,7 @@
 <div class="">
     <div class="row">
         <div class="col-md-10">
-            <h2 class="text-info"><small>(@Model.Lang)</small>@Html.DisplayFor(model => model.Title) <small><a href="@Url.Action("Details","Profile",new{id=Model.UserId})">@Html.Raw(@ViewData["username"])</a></small></h2>
+            <h2 class="text-info"><small><a href="@Url.Action("Details","Profile",new{id=Model.UserId})">@Html.Raw(@ViewData["username"])</a></small> @Html.DisplayFor(model => model.Title) <small>(@Model.Lang)</small></h2>
         </div>
     </div>
  
