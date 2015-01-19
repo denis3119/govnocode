@@ -86,7 +86,7 @@ namespace govnocode.Controllers
                 ViewData["Voted"] = true; 
             else 
                 ViewData["Voted"] = Voted(User.Identity.GetUserId(),publication.Id);
-            
+            ViewData["UserLink"] = new UsersFunction().GetById(publication.UserId).LinkAvatar;
             return View(publication);
         }
 
@@ -195,6 +195,7 @@ namespace govnocode.Controllers
               _dbContext.Entry(publication).State=EntityState.Modified;
             _dbContext.SaveChanges();
             new UsersFunction().RateUpdateAllUsers();
+            
             return true;
         }
         [HttpPost]

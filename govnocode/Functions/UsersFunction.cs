@@ -79,7 +79,15 @@ namespace govnocode.Functions
         public ApplicationUser FindById(String id)
         {
             var db = new ApplicationDbContext();
-            return db.Users.FirstOrDefault(x => x.Id == id);
+            var user = db.Users.FirstOrDefault(x => x.Id == id);
+            if (user != null && user.LinkAvatar == "")
+            {
+                user.LinkAvatar = "http://lurkmore.so/images/thumb/8/85/Indian.jpg/180px-Indian.jpg";
+                db.Entry(user).State=EntityState.Modified;
+                db.SaveChanges();
+            }
+            db.Dispose();
+            return user;
         }
 
         public ApplicationUser GetById(string id)

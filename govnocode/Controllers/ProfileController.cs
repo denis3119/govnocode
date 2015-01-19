@@ -39,9 +39,11 @@ namespace govnocode.Controllers
                 }
                 id= User.Identity.GetUserId();
             }
+           var userId= User.Identity.GetUserId();
             var publicationList=dbContext.Publications.Where(x => x.UserId == id).ToList();
             ViewData["Pub"] = publicationList.OrderByDescending(x=>x.Rate).ToList();
             ViewData["Comments"] = dbContext.Comments.ToList();
+          
             var user = dbContext.Users.First(x => x.Id == id);
             user.Rating = GetUserRate(user);
             dbContext.Dispose();
