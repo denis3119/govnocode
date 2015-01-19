@@ -33,7 +33,9 @@ namespace govnocode.Controllers
             foreach (var variable in _db.Comments.ToList().Where(x => x.IdPublication == publication.Id))
             {
                 Delete(variable);
-            } _db.Dispose();
+            }
+            _db.SaveChanges();
+            _db.Dispose();
         }
 
         public void Update(Comment comment)

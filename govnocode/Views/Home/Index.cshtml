@@ -1,4 +1,5 @@
-﻿@using govnocode.Models
+﻿@using govnocode.Controllers
+@using govnocode.Models
 @using Resources
 @{
     ViewBag.Title = @Resource.HomeTitle;
@@ -456,7 +457,7 @@
      {
          <div class="well-1 well-sm">
              <div class="row">
-                 <div class="col-md-2" style="margin-top: 0.4%">
+                 <div class="col-md-2" style="margin-top: 0.0%">
                      <img id="" src="../../Images/starOn.png" alt="" />
                      @if (variable.Rate >= 2)
                      {
@@ -491,23 +492,25 @@
                          <img id="" src="../../Images/starOff.png" alt="" />
                      }
                  </div>
-                 <div class="col-md-3">
-                     <label class="text-info new-theme-label" style="">
-                         @if (variable.Title.Length > 30)
-                         {
-                             @Html.Raw(@variable.Title.Substring(0, 29) + "...")
+                 <a href="@Url.Action("Details","Publication",new{id=variable.Id})">
+                     <div class="col-md-3" >
+                         <text class="text-info" >
+                             @if (variable.Title.Length > 30)
+                             {
+                                 @Html.Raw(@variable.Title.Substring(0, 29) + "...")
 
-                         }
-                         else
-                         {
-                             @Html.Raw(@variable.Title)
-                             ;
-                         }
-                     </label>
+                             }
+                             else
+                             {
+                                 @Html.Raw(@variable.Title)
+                                 ;
+                             }
+                         </text>
 
-                 </div>
-                 <div class="col-md-3" style="margin-top: 0.5%">
-                     @{
+                     </div>
+                 </a>
+                <div class="col-md-3">
+                    @*@{
                          var code10Chars = "";
                          i = 0;
                          foreach (var VARIABLE in variable.Code.Replace("\r\n", ""))
@@ -523,24 +526,29 @@
                              }
                              i++;
                          }
-                     } 
-                     <pre class="prettyprint" style="margin-bottom: -10%"> @(code10Chars)...... </pre>
-                 </div>
-                 <div class="col-md-2" style="margin-top: 0.5%">
+                     }
+                    @*<text class="text-info">   <pre class="prettyprint"> @(code10Chars)...... </pre>      </text>*@
+                    @{
+                        var username = new UsersFunction().GetById(variable.UserId).Name;
+                    }
+                    <div class="col-md-1"><a href="@Url.Action("Details","Profile",new{id=variable.UserId})">@username</a></div>
+                </div>
+                 <div class="col-md-2" >
                      @{
                          var listComments = (List<Comment>)ViewData["Comments"];
                          var count = listComments.Count(x => x.IdPublication == variable.Id);
-                     } 
-                     @Resource.Comments:@count
+                     }
+                     <text>  @Resource.Comments:@count     </text>
 
                  </div>
                  <div class="col-md-1">
-                     <label style="" class="text-info new-theme-label-date">@(variable.Date.Day).@(variable.Date.Month).@variable.Date.Year </label>
+                     <text style="" class="text-info">@(variable.Date.Day).@(variable.Date.Month).@variable.Date.Year </text>
                  </div>
 
-                 <div class="col-md-1 new-theme-btn">
+                 @*<div class="col-md-1 new-theme-btn">
                      <a href="@Url.Action("Details", "Publication", new {id = variable.Id})" class="btn btn-link text-info">@Resource.Details</a>
-                 </div>
+                 </div>*@
+                 
              </div>
          </div> 
          i++;

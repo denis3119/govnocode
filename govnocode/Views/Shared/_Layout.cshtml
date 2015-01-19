@@ -121,9 +121,9 @@
             @using (Html.BeginForm("ChangeThemes", "Home", new { @class = "form-control" }))
             {
                 <select onchange="$('#themeChange').click()" name="them" class="form-control">
-                    <option disabled selected>themes</option>
-                    <option value="css">White</option>
-                    <option value="css2">Black</option>
+                    <option disabled selected>@Resource.Themes</option>
+                    <option value="css">Original</option>
+                    <option value="css2">Blue</option>
                 </select>
               <input hidden="hidden" type="submit" id="themeChange" name="submit" class="btn hidden btn-default" value="@Resource.Lang">
             }

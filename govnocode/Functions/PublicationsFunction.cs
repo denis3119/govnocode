@@ -29,12 +29,28 @@ namespace govnocode.Controllers
             CommentFunction commentFunction = new CommentFunction();
             ApplicationDbContext db = new ApplicationDbContext();
             commentFunction.DeleteByPublication(publication);
+            DeleteTags(publication);
             db.Entry(publication).State = EntityState.Deleted;
             db.SaveChanges();
              db.Dispose();
             
         }
 
+        public void DeleteTags(Publication publication)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+            foreach (var VARIABLE in db.Tags.ToList().Where(x=>x.PublicationId==publication.Id))
+            {
+                db.Entry(VARIABLE).State=EntityState.Deleted;
+
+            }
+
+
+
+            db.SaveChanges();
+            db.Dispose();
+
+        }
         public void PublicationDeleteByUser(ApplicationUser user)
         {
             ApplicationDbContext _db = new ApplicationDbContext();
