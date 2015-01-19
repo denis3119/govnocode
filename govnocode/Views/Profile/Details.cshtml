@@ -11,10 +11,14 @@
 <div>
 
     <div class="row container">
-        <div class="col-lg-5">
-            <h2 class="text-info ">@if(Model.Blocked){@Html.Raw("("+@Resource.Blocked+")")}Профиль @Html.DisplayFor(model => model.Name)</h2><h6 class="text-muted">(@Html.DisplayFor(model => model.Email))</h6>
+        <div class="col-lg-1">
+            <img id="image" style="margin-top: 25%" src="@Model.LinkAvatar" width="100" height="100" alt="..." class="img-rounded img-responsive">
         </div>
-        <div class="col-lg-11">
+        <div class="col-lg-5">
+            <h2 class="text-info ">@if (Model.Blocked)
+            {@Html.Raw("(" + @Resource.Blocked + ")")}Профиль @Html.DisplayFor(model => model.Name)</h2><h6 class="text-muted">(@Html.DisplayFor(model => model.Email))</h6>
+        </div>
+        <div class="col-lg-9 text-danger">
             @Html.DisplayFor(model => model.Rating)
         </div>
     </div>
@@ -32,76 +36,76 @@
                         <img id="" src="../../Images/starOn.png" alt="" />
                         @if (variable.Rate >= 2)
                         {
-                        <img id="" src="../../Images/starOn.png" alt="" />
+                            <img id="" src="../../Images/starOn.png" alt="" />
                         }
                         else
                         {
-                        <img id="" src="../../Images/starOff.png" alt="" />
+                            <img id="" src="../../Images/starOff.png" alt="" />
                         }
                         @if (variable.Rate >= 3)
                         {
-                        <img id="" src="../../Images/starOn.png" alt="" />
+                            <img id="" src="../../Images/starOn.png" alt="" />
                         }
                         else
                         {
-                        <img id="" src="../../Images/starOff.png" alt="" />
+                            <img id="" src="../../Images/starOff.png" alt="" />
                         }
                         @if (variable.Rate >= 4)
                         {
-                        <img id="" src="../../Images/starOn.png" alt="" />
+                            <img id="" src="../../Images/starOn.png" alt="" />
                         }
                         else
                         {
-                        <img id="" src="../../Images/starOff.png" alt="" />
+                            <img id="" src="../../Images/starOff.png" alt="" />
                         }
                         @if (variable.Rate > 4.9)
                         {
-                        <img id="" src="../../Images/starOn.png" alt="" />
+                            <img id="" src="../../Images/starOn.png" alt="" />
                         }
                         else
                         {
-                        <img id="" src="../../Images/starOff.png" alt="" />
+                            <img id="" src="../../Images/starOff.png" alt="" />
                         }
                     </div>
                     <div class="col-md-3">
                         <label class="text-info" style="margin-top: 2.7%">
                             @if (variable.Title.Length > 30)
-                                 {
-                                     @Html.Raw(@variable.Title.Substring(0, 29) + "...")
+                            {
+                                @Html.Raw(@variable.Title.Substring(0, 29) + "...")
 
-                                 }
-                                 else
-                                 {
-                                     @Html.Raw(@variable.Title)
-                                     ;
-                                 }
+                            }
+                            else
+                            {
+                                @Html.Raw(@variable.Title)
+                                ;
+                            }
                         </label>
 
                     </div>
                     <div class="col-md-4" style="margin-top: 0.5%">
                         @{
-                        var code10Chars = "";
-                        var i = 0;
-                        foreach (var VARIABLE in variable.Code.Replace("\r\n",""))
-                        {
+                            var code10Chars = "";
+                            var i = 0;
+                            foreach (var VARIABLE in variable.Code.Replace("\r\n", ""))
+                            {
 
-                            if (i < 40)
-                            {
-                                code10Chars += VARIABLE;
+                                if (i < 40)
+                                {
+                                    code10Chars += VARIABLE;
+                                }
+                                else
+                                {
+                                    break;
+                                }
+                                i++;
                             }
-                            else
-                            {
-                                break;
-                            }
-                            i++;
-                        }
                         }
                         <pre class="prettyprint" style="margin-bottom: -10%"> @code10Chars...... </pre>
                     </div>
                     <div class="col-md-2" style="margin-top: 0.5%">
                         @{
-                        var listComments = (List<Comment>)ViewData["Comments"];
-                        var count = listComments.Count(x => x.IdPublication == variable.Id);
+                            var listComments = (List<Comment>)ViewData["Comments"];
+                            var count = listComments.Count(x => x.IdPublication == variable.Id);
                         }
                         @Resource.Comments:@count
 

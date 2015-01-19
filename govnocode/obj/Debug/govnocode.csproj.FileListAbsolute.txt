@@ -72,3 +72,4 @@ C:\Users\denik\documents\visual studio 2013\Projects\govnocode\govnocode\bin\en\
 C:\Users\denik\documents\visual studio 2013\Projects\govnocode\govnocode\obj\Debug\govnocode.Resources.Resource.en.resources
 C:\Users\denik\documents\visual studio 2013\Projects\govnocode\govnocode\obj\Debug\en\govnocode.resources.dll
 C:\Users\denik\documents\visual studio 2013\Projects\govnocode\govnocode\obj\Debug\govnocode.Migrations._12.resources
+C:\Users\denik\documents\visual studio 2013\Projects\govnocode\govnocode\obj\Debug\govnocode.csprojResolveAssemblyReference.cache

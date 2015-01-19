@@ -24,7 +24,7 @@
 <div class="">
     <div class="row">
         <div class="col-md-10">
-            <h2 class="text-info"><small>(@Model.Lang)</small>@Html.DisplayFor(model => model.Title) <small>@Html.Raw(@ViewData["username"])</small></h2>
+            <h2 class="text-info"><small>(@Model.Lang)</small>@Html.DisplayFor(model => model.Title) <small><a href="@Url.Action("Details","Profile",new{id=Model.UserId})">@Html.Raw(@ViewData["username"])</a></small></h2>
         </div>
     </div>
  
@@ -38,19 +38,22 @@
           
         </div>
 
-        <div style="margin-left: 0;" class="col-md-12">
+        <div class="row">
+            <div class="col-md-10"></div>
+            <div style="margin-left: 0;" class="col-md-2">
 
-            @{
-                var userAuthorpublication = User.Identity.GetUserId() == Model.UserId;
-                if (User.IsInRole("admin") || userAuthorpublication)
-                {
+                @{
+                    var userAuthorpublication = User.Identity.GetUserId() == Model.UserId;
+                    if (User.IsInRole("admin") || userAuthorpublication)
+                    {
 
-                    <a href="@Url.Action("Edit", "Publication", new {id = Model.Id})"><input class="btn btn-default" value="@Resource.Edit" type="button"/></a>
+                        <a href="@Url.Action("Edit", "Publication", new {id = Model.Id})"><input class="btn btn-default" value="@Resource.Edit" type="button" /></a>
+                    }
                 }
-            }
 
+            </div>
         </div>
-    </div>
+        </div>
     <hr/>
 
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -71,8 +74,8 @@
                 </div>
             </div>
         </div>
-        <div class="well-lg">
-            <textarea class="" id="TextView" name="TextView" type="text" style="max-width: 100%;">@Html.DisplayFor(model => model.Text)</textarea>
+        <div class="well-lg well">
+            <textarea class="" cols="20"  id="TextView" name="TextView" type="text"  style="max-width: 100%;">@Model.Text</textarea>
         </div>
 
     </div>

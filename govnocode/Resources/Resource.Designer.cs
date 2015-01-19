@@ -772,7 +772,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Топ.
+        ///   Looks up a localized string similar to Топ Java.
         /// </summary>
         public static string Top5Java {
             get {

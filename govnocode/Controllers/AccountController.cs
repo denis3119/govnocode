@@ -168,7 +168,8 @@ namespace govnocode.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Name = model.Email, LinkAvatar = "http://lurkmore.so/images/thumb/8/85/Indian.jpg/180px-Indian.jpg" };
+
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

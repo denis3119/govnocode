@@ -940,6 +940,8 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+    min-height: 25px;
+    min-width: 25px;
 }
 .img-rounded {
   border-radius: 0;
@@ -4774,7 +4776,7 @@ a.thumbnail.active {
     margin-top: 14.6% 
         ;}
 .new-theme-btn {
-    margin-top: -0.5%;
+    margin-top: -0.4%;
 }
 @-webkit-keyframes progress-bar-stripes {
   from {
@@ -5850,6 +5852,13 @@ button.close {
 .carousel-inner > .item > a > img {
   line-height: 1;
 } 
+  .word { 
+    width: 160px; 
+    background: #f0f0f0;
+    border: 1px solid #333;
+    padding: 10px;
+    font-size: 18px;
+   }
 /* ReSharper disable once InvalidValue */
 @media all and (-webkit-transform-3d) {
   .carousel-inner > .item {

@@ -142,7 +142,8 @@ namespace govnocode.Controllers
         public ActionResult Create(Publication publication)
         {
             if (string.IsNullOrEmpty(publication.Text) || string.IsNullOrEmpty(publication.Title) ||
-                string.IsNullOrEmpty(publication.Code) || string.IsNullOrEmpty(publication.Lang)||string.IsNullOrEmpty(publication.TagString))
+                string.IsNullOrEmpty(publication.Code) || string.IsNullOrEmpty(publication.Lang)||
+                string.IsNullOrEmpty(publication.TagString)||publication.Title.Length>50)
                 return View(publication);
             publication.Text = publication.Text.Trim();
             publication.UserId = User.Identity.GetUserId();

@@ -55,9 +55,9 @@
                 </div>
                 <div class="col-md-3">
                     <label class="text-info" style="margin-top: 2.7%">
-                        @if (variable.Title.Length > 30)
+                        @if (variable.Title.Length > 25)
                         {
-                            @Html.Raw(@variable.Title.Substring(0, 29) + "...")
+                            @Html.Raw(@variable.Title.Substring(0, 24) + "...")
 
                         }
                         else
@@ -75,7 +75,7 @@
                         foreach (var VARIABLE in variable.Code.Replace("\r\n", ""))
                         {
 
-                            if (i < 40)
+                            if (i < 35)
                             {
                                 code10Chars += VARIABLE;
                             }

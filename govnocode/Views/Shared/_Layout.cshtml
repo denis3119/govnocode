@@ -12,7 +12,8 @@
     <title>@ViewBag.Title - @Resource.NameProject</title>
      @{
          var c = Request.Cookies["them"];
-         if (c.Value == null || c.Value == "css")
+         
+         if (c==null||c.Value == null || c.Value == "css")
          {
              @Styles.Render("~/Content/css")
          }
