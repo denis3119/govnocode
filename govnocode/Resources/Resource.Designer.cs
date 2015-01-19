@@ -250,6 +250,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Повторите пароль.
+        /// </summary>
+        public static string Confirm_password {
+            get {
+                return ResourceManager.GetString("Confirm_password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Подтверждение вашего аккаунта.
         /// </summary>
         public static string Confirm_your_account {
