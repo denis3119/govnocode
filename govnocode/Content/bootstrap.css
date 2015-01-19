@@ -311,11 +311,13 @@ html {
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.428571429;
-  color: #333333;
-  background-color: #ffffff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #333333;
+    background-color: #428bca;
+    background-image: url('../Resources/5144289-binarnyy-kod-matricy.jpg');
+    background-attachment: fixed;
 }
 
 input,
@@ -928,7 +930,7 @@ pre code {
 
 @media (min-width: 768px) {
   .container {
-    max-width: 750px;
+    max-width: 7500px;
   }
   .col-sm-1,
   .col-sm-2,
