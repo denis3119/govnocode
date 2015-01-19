@@ -381,4 +381,7 @@
   <data name="hello" xml:space="preserve">
     <value>Привет</value>
   </data>
+  <data name="BtnToPublication" xml:space="preserve">
+    <value>К публикации</value>
+  </data>
 </root>

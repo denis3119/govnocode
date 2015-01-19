@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using govnocode.Functions;
 using govnocode.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
@@ -31,9 +32,10 @@ namespace govnocode.Controllers
             }
         }
         readonly ApplicationDbContext _dbContext = new ApplicationDbContext();
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
             var tags = _dbContext.Tags.Where(x => x.PublicationId == id).ToList();
+            if (id == null) return RedirectToAction("Index","Home");
             var publication = _dbContext.Publications.FirstOrDefault(x => x.Id == id);
             if (publication != null)
             {
@@ -192,7 +194,7 @@ namespace govnocode.Controllers
             if (publication != null) publication.Rate = rankNumber;
               _dbContext.Entry(publication).State=EntityState.Modified;
             _dbContext.SaveChanges();
-            
+            new UsersFunction().RateUpdateAllUsers();
             return true;
         }
         [HttpPost]

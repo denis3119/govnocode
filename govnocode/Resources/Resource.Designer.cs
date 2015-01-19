@@ -160,6 +160,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to К публикации.
+        /// </summary>
+        public static string BtnToPublication {
+            get {
+                return ResourceManager.GetString("BtnToPublication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Управление паролем.
         /// </summary>
         public static string ChangePass {
@@ -579,6 +588,15 @@ namespace Resources {
         public static string Please_reset_your_password_by_clicking {
             get {
                 return ResourceManager.GetString("Please_reset_your_password_by_clicking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Профиль.
+        /// </summary>
+        public static string Profile {
+            get {
+                return ResourceManager.GetString("Profile", resourceCulture);
             }
         }
         

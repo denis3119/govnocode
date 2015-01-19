@@ -2,13 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
-using System.Drawing;
 using System.Linq;
+using govnocode.Controllers;
 using govnocode.Models;
-using Lucene.Net.Search;
-using Microsoft.AspNet.Identity;
 
-namespace govnocode.Controllers
+namespace govnocode.Functions
 {
     public class UsersFunction
     {
@@ -27,6 +25,7 @@ namespace govnocode.Controllers
         }
         public List<ApplicationUser> Top5()
         {
+
             var dbContext = new ApplicationDbContext();
             var listUsersRate = dbContext.Users.ToList();
             var sortListUser = new List<ApplicationUser>();
@@ -52,15 +51,16 @@ namespace govnocode.Controllers
             
         }
 
-         public  List<ApplicationUser> ToList()
+         public  IEnumerable<ApplicationUser> ToList()
         {
-            ApplicationDbContext _db = new ApplicationDbContext();
-             return _db.Users.ToList();
+            var db = new ApplicationDbContext();
+             var list = db.Users.ToList();
+             return list.ToList();
          }
 
         public bool UsedName(string name)
          {
-             ApplicationDbContext db = new ApplicationDbContext();
+             var db = new ApplicationDbContext();
             var result = db.Users.ToList().Any(variable => variable.Name == name);
             db.Dispose();
             return result;
@@ -78,13 +78,26 @@ namespace govnocode.Controllers
 
         public ApplicationUser FindById(String id)
         {
-            ApplicationDbContext db = new ApplicationDbContext();
+            var db = new ApplicationDbContext();
             return db.Users.FirstOrDefault(x => x.Id == id);
         }
 
         public ApplicationUser GetById(string id)
         {
             return FindById(id);
+        }
+
+        public void RateUpdateAllUsers()
+        {
+            var db = new ApplicationDbContext();
+            var list = ToList();
+            foreach (var user in list)
+            {
+                user.Rating = GetUserRate(user);
+                db.Entry(user).State = EntityState.Modified;
+            }
+            db.SaveChanges();
+           db.Dispose();
         }
     }
 }

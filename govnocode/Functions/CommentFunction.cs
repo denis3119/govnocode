@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using Antlr.Runtime.Tree;
+using govnocode.Functions;
 using govnocode.Models;
 
 namespace govnocode.Controllers
@@ -166,6 +167,20 @@ namespace govnocode.Controllers
             {
                 return db.Comments.ToList();
             }
+        }
+
+        public int SummRateCommentsByUser(ApplicationUser user)
+        {
+            var point = 0;
+            using (var db = new ApplicationDbContext())
+            {
+                //if (db.Publications.Where(x => x.Id == publicationId).ToList().Any(x => x.UserId == user.Id))
+                //{
+                //    return true;
+                //}
+                point += db.Comments.ToList().Where(x => x.IdUser == user.Id).Sum(variable1 => db.RateComments.ToList().Where(x => x.IdComment == variable1.Id).Sum(variable => variable.Rate));
+            }
+            return point;
         }
     }
 }

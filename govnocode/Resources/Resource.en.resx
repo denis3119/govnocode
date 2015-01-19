@@ -381,4 +381,7 @@
   <data name="hello" xml:space="preserve">
     <value>Hello</value>
   </data>
+  <data name="BtnToPublication" xml:space="preserve">
+    <value>To publication</value>
+  </data>
 </root>

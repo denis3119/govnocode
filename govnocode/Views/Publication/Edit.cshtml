@@ -17,7 +17,7 @@
         @Html.HiddenFor(model => model.Id)
         <div class="form-group">
             <label class="control-label col-md-1">Language</label>
-            <div class="col-md-10">
+            <div class="col-md-9">
                 <select name="Lang" class="form-control">
                     <option @{if (Model.Lang == "C#") { @Html.Raw("selected"); }} value="C#">C#</option>
                     <option @{if (Model.Lang == "Java") {@Html.Raw("selected"); }} value="Java">Java</option>
@@ -25,12 +25,18 @@
                     <option @{if (Model.Lang == "Python") { @Html.Raw("selected"); }} value="Python">Python</option>
                 </select>
             </div>
-        </div>
+           
+            </div>
+       
         <div class="form-group">
             @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-1" })
-            <div class="col-md-10">
+            <div class="col-md-9">
                 @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                <input type="submit" value="@Resource.Save" class=" btn btn-default"/>
+                <a href="@Url.Action("Details","Publication",new{id = @Model.Id})" class="btn btn-danger">@Resource.BtnToPublication</a>
             </div>
         </div>
 
@@ -76,12 +82,13 @@
         </div>
             <div class="form-group">
                 <div class="col-md-offset-11">
-                    <input type="submit" value="@Resource.Save"  class=" btn btn-default" />
+                    
+                    <input type="submit" value="@Resource.Save" class=" btn btn-default"/>
                 </div>
             </div>
         </div>
 }
 
 <div>
-    @Html.ActionLink(Resource.BackToList, "Index")
+    @*@Html.ActionLink(Resource.BackToList, "Index")*@
 </div>

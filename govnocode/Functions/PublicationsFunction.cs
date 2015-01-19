@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using govnocode.Models;
 
 namespace govnocode.Controllers
@@ -44,9 +46,6 @@ namespace govnocode.Controllers
                 db.Entry(VARIABLE).State=EntityState.Deleted;
 
             }
-
-
-
             db.SaveChanges();
             db.Dispose();
 
@@ -99,6 +98,32 @@ namespace govnocode.Controllers
                 }
             }
             return listResult;
+        }
+
+        public bool PosterUser(Int32 publicationId,ApplicationUser user)
+        {
+            using (var db= new ApplicationDbContext())
+            {
+                if (db.Publications.Where(x => x.Id == publicationId).ToList().Any(x => x.UserId == user.Id))
+                {
+                    return true;
+                }
+            }
+           return false;
+        }
+
+        public int RatePublications(ApplicationUser user)
+        {
+            var point = 0;
+            using (var db = new ApplicationDbContext())
+            {
+                //if (db.Publications.Where(x => x.Id == publicationId).ToList().Any(x => x.UserId == user.Id))
+                //{
+                //    return true;
+                //}
+                point += db.Publications.ToList().Where(x => x.UserId == user.Id).Sum(variable1 => db.RatePublications.ToList().Where(x => x.IdPublication == variable1.Id).Sum(variable => variable.Rate));
+            }
+            return point;
         }
     }
 }

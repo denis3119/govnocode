@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using govnocode.Functions;
 using govnocode.Models;
 using Microsoft.AspNet.Identity;
 
@@ -15,8 +16,10 @@ namespace govnocode.Controllers
         private double GetUserRate(ApplicationUser user)
         {
             var dbContext = new ApplicationDbContext();
-            var summPublicationRate = dbContext.RatePublications.Where(x => x.IdUser == user.Id).ToList().Sum(x => x.Rate);
-            var summCommentRate = dbContext.RateComments.Where(x => x.IdUser == user.Id).ToList().Sum(x => x.Rate);
+            //var listRate = dbContext.RatePublications.Where(x => (new PublicationsFunction().PosterUser(x.IdPublication,user))).ToList();
+            var listRate = new PublicationsFunction().RatePublications(user);
+            var summPublicationRate = listRate;
+            var summCommentRate = new CommentFunction().SummRateCommentsByUser(user);
             var ratePublication = (double)summPublicationRate / 50;
             var rateComment = (double)summCommentRate / 100;
             dbContext.Dispose();
