@@ -68,14 +68,14 @@
                     </label>
 
                 </div>
-                <div class="col-md-4" style="margin-top: 0.5%">
+                <div class="col-md-3" style="margin-top: 0.5%">
                     @{
                         var code10Chars = "";
                         var i = 0;
                         foreach (var VARIABLE in variable.Code.Replace("\r\n", ""))
                         {
 
-                            if (i < 35)
+                            if (i < 25)
                             {
                                 code10Chars += VARIABLE;
                             }
@@ -88,7 +88,7 @@
                     }
                     <pre class="prettyprint" style="margin-bottom: -10%"> @code10Chars...... </pre>
                 </div>
-                <div class="col-md-2" style="margin-top: 0.5%">
+                <div class="col-md-2 text-center" style="margin-top: 0.5%; padding-right: 0">
                     @{
                         var listComments = (List<Comment>) ViewData["Comments"];
                         var count = listComments.Count(x => x.IdPublication == variable.Id);

@@ -11,6 +11,7 @@ using Microsoft.AspNet.Identity;
 namespace govnocode.Controllers
 {
     [Culture]
+    [Authorize]
     public class ProfileController : Controller
     {
         private double GetUserRate(ApplicationUser user)

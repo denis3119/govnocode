@@ -31,6 +31,8 @@
                                 foreach (var variable in sortUser)
                                 {
                                     variable.Rating *= k;
+                                  
+                                    if (i == 5) { break;}
                                     i++;
                                     if (string.IsNullOrEmpty(variable.LinkAvatar))
                                     {
@@ -70,7 +72,9 @@
                             var top5Post = (List<Publication>)ViewData["Top5Posts"];
                             foreach (var variable in top5Post)
                             {
+                                
                                 i++;
+                              
                                 switch (i)
                                 {
                                     case 1: t = "text text-danger"; break;
@@ -100,7 +104,7 @@
 
                                         </a>
                                     </div>
-                                    <div style="font-size: larger" class="col-md-1 @t">от </div>
+                                    <div style="font-size: larger" class="col-md-1 @t">@Resource.From </div>
                                     <div class="col-md-4">
                                         <div style="font-size: larger" class="@t">
                                             <a href="@Url.Action("Details", "Profile", new {id = variable.UserId})">
@@ -119,6 +123,7 @@
                                     </div>
                                 </div>
                             }
+                           
                         }
 
                     </div>
@@ -160,7 +165,7 @@
 
                                         </a>
                                     </div>
-                                    <div style="font-size: larger" class="col-md-1 @t">от </div>
+                                    <div style="font-size: larger" class="col-md-1 @t">@Resource.From </div>
                                     <div class="col-md-4">
                                         <div style="font-size: larger" class="@t">
                                             <a href="@Url.Action("Details", "Profile", new {id = variable.IdUser})">
@@ -224,7 +229,7 @@
 
                                             </a>
                                         </div>
-                                        <div style="font-size: larger" class="col-md-1 @t">от </div>
+                                        <div style="font-size: larger" class="col-md-1 @t">@Resource.From </div>
                                         <div class="col-md-4">
                                             <div style="font-size: larger" class="@t">
                                                 <a href="@Url.Action("Details", "Profile", new {id = variable.UserId})">
@@ -271,7 +276,7 @@
                                             <a href="@Url.Action("Details", "Publication", new {id = variable.Id})">
                                                 <div>
                                                     <div style="font-size: larger" class="@t">
-                                                        <span class="badge-1">@variable.Rate</span>
+                                                        <span class="badge-1">@variable.Rate.ToString("##,##")</span>
                                                         @if (variable.Title.Length > 26)
                                                         {
                                                             @Html.Raw(@variable.Title.Substring(0, 25) + "...")
@@ -288,7 +293,7 @@
 
                                             </a>
                                         </div>
-                                        <div style="font-size: larger" class="col-md-1 @t">от </div>
+                                        <div style="font-size: larger" class="col-md-1 @t">@Resource.From </div>
                                         <div class="col-md-4">
                                             <div style="font-size: larger" class="@t">
                                                 <a href="@Url.Action("Details", "Profile", new {id = variable.UserId})">
@@ -354,7 +359,7 @@
 
                                             </a>
                                         </div>
-                                        <div style="font-size: larger" class="col-md-1 @t">от </div>
+                                        <div style="font-size: larger" class="col-md-1 @t">@Resource.From </div>
                                         <div class="col-md-4">
                                             <div style="font-size: larger" class="@t">
                                                 <a href="@Url.Action("Details", "Profile", new {id = variable.UserId})">
@@ -417,7 +422,7 @@
 
                                             </a>
                                         </div>
-                                        <div style="font-size: larger" class="col-md-1 @t">от </div>
+                                        <div style="font-size: larger" class="col-md-1 @t">@Resource.From </div>
                                         <div class="col-md-4">
                                             <div style="font-size: larger" class="@t">
                                                 <a href="@Url.Action("Details", "Profile", new {id = variable.UserId})">

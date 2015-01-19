@@ -48,10 +48,11 @@ namespace govnocode.Controllers
             if (error)
             {
                 ModelState.AddModelError("", string.Format(Resources.Resource.name_already+"({0})",user.Name));
-                return View(UserManager.FindById(user.Id));
+               // return View(UserManager.FindById(user.Id));
             }
             _usersFunction.Update(user);
-            return View("Edit",UserManager.FindById(user.Id));
+           // ModelState.AddModelError("", string.Format(Resources.Resource.name_already + "({0})", user.Name));
+            return View(UserManager.FindById(user.Id));
         }
         public ActionResult Index()
         {

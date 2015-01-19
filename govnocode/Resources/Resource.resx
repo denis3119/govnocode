@@ -402,4 +402,7 @@
   <data name="Confirm_password" xml:space="preserve">
     <value>Повторите пароль</value>
   </data>
+  <data name="From" xml:space="preserve">
+    <value>от</value>
+  </data>
 </root>
