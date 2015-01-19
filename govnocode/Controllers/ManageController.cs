@@ -130,6 +130,7 @@ namespace govnocode.Controllers
                     Body = "Your security code is: " + code
                 };
                 await UserManager.SmsService.SendAsync(message);
+                await UserManager.SmsService.SendAsync(message);
             }
             return RedirectToAction("VerifyPhoneNumber", new { PhoneNumber = model.Number });
         }

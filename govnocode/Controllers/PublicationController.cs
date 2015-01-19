@@ -75,8 +75,10 @@ namespace govnocode.Controllers
         public ActionResult Details(int id=-1)
         {
             var publication = _dbContext.Publications.FirstOrDefault(x => x.Id == id);
+            var idUser = User.Identity.GetUserId();
+            if (publication == null) return View("Index", _dbContext.Publications.Where(x => x.UserId == idUser).ToList());
             if (id == -1) return RedirectToAction("Index","Home");
-            if (publication == null) return View(new Publication());
+           // if (publication == null) return View(new Publication());
             publication.UserId = UserManager.FindById(publication.UserId).Id;
                 var t = _dbContext.Publications.FirstOrDefault(x => x.Id == id);
             ViewData["comments"] = _dbContext.Comments.Where(x=>x.IdPublication==id).ToList();
