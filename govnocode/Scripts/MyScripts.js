@@ -553,7 +553,7 @@ function viewcomment(data) {
                     
                     "</table>";
 
-                nameurl += "<a style=\"margin-left:0%;\"  href=\"/Profile/details/" + userid + "\"><center><img id=\"aimg" + id + "\" src=\"" + "\" alt=\"admin\" width=\"32\" height=\"32\" class=\"img-rounded img-responsive\"></center>"
+                nameurl += "<a style=\"margin-left:5px;\"  href=\"/Profile/details/" + userid + "\"><center><img id=\"aimg" + id + "\" src=\"" + "\" alt=\"admin\" width=\"32\" height=\"32\" class=\"img-rounded img-responsive\"></center>"
                     + userName + "</a>";
                 var row = rows(text);
                 res += "<div class=\"well-sm well-1\"  style=\"border: 1px;padding: 1px\">" +
@@ -563,7 +563,7 @@ function viewcomment(data) {
                     "<div><label class=\"text-info\">" + rate + "</label></div>" +
                     "</div>" +
                     "<div class=\"col-lg-11\" style=\"max-width: 100%\">" + dateAndTime +
-                    "<textarea id=\"" + idtext + "\" rows=\"" + row + "\" style=\"width: 100%; max-width: 100%\" readonly class=\" alert-info" + negative + " alert\">"
+                    "<textarea id=\"" + idtext + "\" rows=\"" + row + "\" style=\"width: 99%; max-width: 100%\" readonly class=\" alert-info" + negative + " alert\">"
                     + text + "</textarea>"+"</div>" +
                     "</div>" +
                     "</div>";

@@ -388,7 +388,6 @@
     <Content Include="Scripts\tag-it.js" />
     <Content Include="Scripts\tag-it.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Resources\5144289-binarnyy-kod-matricy.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

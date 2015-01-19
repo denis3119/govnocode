@@ -1261,7 +1261,7 @@
     ],
     additionalButtons:[], // Place to hook more buttons by code
     reorderButtonGroups:[],
-    hiddenButtons:[], // Default hidden buttons
+    hiddenButtons: ["cmdImage"], // Default hidden buttons
     disabledButtons:[], // Default disabled buttons
     footer: '',
     fullscreen: {

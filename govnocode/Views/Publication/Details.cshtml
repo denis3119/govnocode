@@ -21,15 +21,15 @@
 
 
 <body>
-    <div class="">
+    <div class="well-lg" style="padding: 5px;padding-left: 15px">
         <div class="row">
             <div class="col-md-1" style="text-align: center; padding-top: 10px">
                 <center>
-                    <img id="image" src="@ViewData["UserLink"]" width="32" height="32" alt="..." class="img-rounded img-responsive">
-                    <a href="@Url.Action("Details", "Profile", new {id = Model.UserId})">@Html.Raw(@ViewData["username"])</a>
+                   
+                    <a href="@Url.Action("Details", "Profile", new {id = Model.UserId})"><img id="image" src="@ViewData["UserLink"]" width="70" height="70" alt="..." class="img-rounded img-responsive"> @Html.Raw(@ViewData["username"])</a>
                 </center>
             </div>
-            <div class="col-md-10" >
+            <div class="col-md-10">
                 <h2 class="text-info">
                     @Html.DisplayFor(model => model.Title) <small>(@Model.Lang)</small>
                 </h2>
@@ -40,28 +40,28 @@
         <div class="row">
             <div class="col-md-10" style="padding: 1px">
 
-                <img onclick="publicationRateSet(1,@Model.Id)" @{if (!(bool)ViewData["Voted"]) { @Html.Raw("onmouseover=\"mousOver1Star()\"")   }} id="star1" src="../../Images/starOff.png" alt="" />
-                <img onclick="publicationRateSet(2,@Model.Id)" @{if (!(bool)ViewData["Voted"]) { @Html.Raw("onmouseover=\"mousOver2Star()\"")    }} id="star2" src="../../Images/starOff.png" alt="" />
-                <img onclick="publicationRateSet(3,@Model.Id)" @{if (!(bool)ViewData["Voted"]) { @Html.Raw("onmouseover=\"mousOver3Star()\"")    }} id="star3" src="../../Images/starOff.png" alt="" />
-                <img onclick="publicationRateSet(4,@Model.Id)" @{if (!(bool)ViewData["Voted"]) { @Html.Raw("onmouseover=\"mousOver4Star()\"")    }} id="star4" src="../../Images/starOff.png" alt="" />
-                <img onclick="publicationRateSet(5,@Model.Id)" @{if (!(bool)ViewData["Voted"]) { @Html.Raw("onmouseover=\"mousOver5Star()\"")    }} id="star5" src="../../Images/starOff.png" alt="" />
+                <img onclick="publicationRateSet(1,@Model.Id)" @{if (!(bool)ViewData["Voted"]) { @Html.Raw("onmouseover=\"mousOver1Star()\"")     }} id="star1" src="../../Images/starOff.png" alt="" />
+                <img onclick="publicationRateSet(2,@Model.Id)" @{if (!(bool)ViewData["Voted"]) { @Html.Raw("onmouseover=\"mousOver2Star()\"")      }} id="star2" src="../../Images/starOff.png" alt="" />
+                <img onclick="publicationRateSet(3,@Model.Id)" @{if (!(bool)ViewData["Voted"]) { @Html.Raw("onmouseover=\"mousOver3Star()\"")      }} id="star3" src="../../Images/starOff.png" alt="" />
+                <img onclick="publicationRateSet(4,@Model.Id)" @{if (!(bool)ViewData["Voted"]) { @Html.Raw("onmouseover=\"mousOver4Star()\"")      }} id="star4" src="../../Images/starOff.png" alt="" />
+                <img onclick="publicationRateSet(5,@Model.Id)" @{if (!(bool)ViewData["Voted"]) { @Html.Raw("onmouseover=\"mousOver5Star()\"")      }} id="star5" src="../../Images/starOff.png" alt="" />
 
 
             </div>
-            <div style="margin-left: 0;" class="col-md-2">
+            <div style="margin-left: 0;" class="col-md-2 text-right">
 
                 @{
                     var userAuthorpublication = User.Identity.GetUserId() == Model.UserId;
                     if (User.IsInRole("admin") || userAuthorpublication)
                     {
 
-                        <a href="@Url.Action("Edit", "Publication", new {id = Model.Id})"><input class="btn btn-default" value="@Resource.Edit" type="button" /></a>
+                        <a href="@Url.Action("Edit", "Publication", new {id = Model.Id})"><input class="btn btn-default " value="@Resource.Edit" type="button" /></a>
                     }
                 }
 
             </div>
         </div>
-
+    </div>
         <hr />
 
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -118,16 +118,21 @@
                 </div>
             </div>
         </div>
-    </div>
+   
 
     <!-- Modal -->
     <div id="view" class="well-lg" style="margin-top: 5%">
 
     </div>
 
-    <div @if (!User.Identity.IsAuthenticated) { @Html.Raw("hidden=\"\"")  ; }>
+    <div @if (!User.Identity.IsAuthenticated) { @Html.Raw("hidden=\"\"")   ; }>
         <textarea class="form-control" id="Comment" preview name="Comment" style="max-width: 100%;"></textarea>
-        <button onclick="addComment(@Model.Id)" class="btn btn-primary" style="margin-left: 93.5%;margin-top:15px">@Resource.CreatePost</button>
+
+        <div class="row">
+            <div class="col-md-12 text-right">
+                <button onclick="addComment(@Model.Id)" class="btn btn-primary" style="margin-top: 15px">@Resource.CreatePost</button>
+                </div>
+            </div>
     </div><hr />
 </body>
 

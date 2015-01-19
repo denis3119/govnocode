@@ -16,7 +16,7 @@
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.Id)
         <div class="form-group">
-            <label class="control-label col-md-1">Language</label>
+            <label class="control-label col-md-1">@Resource.Lang</label>
             <div class="col-md-9">
                 <select name="Lang" class="form-control">
                     <option @{if (Model.Lang == "C#") { @Html.Raw("selected"); }} value="C#">C#</option>
@@ -29,19 +29,19 @@
             </div>
        
         <div class="form-group">
-            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-1" })
-            <div class="col-md-9">
+            <label class="control-label col-md-1" for="Title">@Resource.Title</label>
+            <div class="col-md-8">
                 @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
             </div>
-            <div class="col-md-2">
-                <input type="submit" value="@Resource.Save" class=" btn btn-default"/>
-                <a href="@Url.Action("Details","Publication",new{id = @Model.Id})" class="btn btn-danger">@Resource.BtnToPublication</a>
+            <div class="col-md-2 text-right">
+                @*<input type="submit" value="@Resource.Save" class=" btn btn-default"/>*@
+                <a href="@Url.Action("Details","Publication",new{id = @Model.Id})" class="btn  btn-danger">@Resource.BtnToPublication</a>
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Text, htmlAttributes: new { @class = "control-label col-md-1" })
+            <label class="control-label col-md-1" for="Text">@Resource.Text</label>
             <div class="col-md-10">
                 <textarea class="form-control" id="Text" name="Text" type="text" data-provide="markdown" style="max-width: 100%" rows="10">@Html.DisplayFor(model => model.Text)</textarea>
                 @Html.ValidationMessageFor(model => model.Text, "", new { @class = "text-danger" })
@@ -50,7 +50,7 @@
 
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-md-1" })
+            <label class="control-label col-md-1" for="Code">@Resource.Code</label>
             <div class="col-md-10">
                 <textarea class="form-control" id="Code" name="Code" type="text" style="max-width: 100%" rows="10">@Html.DisplayFor(model => model.Code)</textarea>
                 @Html.ValidationMessageFor(model => model.Code, "", new {@class = "text-danger"})
@@ -73,17 +73,18 @@
                 </div>
             </div>
         <div class="form-group">
-            @Html.LabelFor(model => model.TagString, htmlAttributes: new { @class = "control-label col-md-1" })
+            <label class="control-label col-md-1" for="TagString">@Resource.Tags</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.TagString, new { htmlAttributes = new { @class = "form-control, hidden " } })
                 @Html.ValidationMessageFor(model => model.TagString, "", new { @class = "text-danger" })
                 <ul id="myTags"></ul>
             </div>
         </div>
-            <div class="form-group">
-                <div class="col-md-offset-11">
-                    
-                    <input type="submit" value="@Resource.Save" class=" btn btn-default"/>
+        <div class="form-group">
+            <div class="col-md-9 text-right"></div>
+                <div class="col-md-2 text-right">
+
+                    <input type="submit" value="@Resource.Save" class=" btn btn-default" />
                 </div>
             </div>
         </div>
