@@ -60,8 +60,10 @@ namespace govnocode.Controllers
 
         public bool UsedName(string name)
          {
-             ApplicationDbContext _db = new ApplicationDbContext();
-            return _db.Users.ToList().Any(variable => variable.Name == name);
+             ApplicationDbContext db = new ApplicationDbContext();
+            var result = db.Users.ToList().Any(variable => variable.Name == name);
+            db.Dispose();
+            return result;
         }
 
         public void Update(ApplicationUser user)
@@ -84,6 +86,5 @@ namespace govnocode.Controllers
         {
             return FindById(id);
         }
-
     }
 }

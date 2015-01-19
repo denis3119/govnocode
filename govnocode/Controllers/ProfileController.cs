@@ -26,7 +26,7 @@ namespace govnocode.Controllers
         public ActionResult Details(string id="")
         {
             var dbContext = new ApplicationDbContext();
-            if (id == "") return RedirectToAction("Index", "Home");
+            if (id == "") id= User.Identity.GetUserId();
             var publicationList=dbContext.Publications.Where(x => x.UserId == id).ToList();
             ViewData["Pub"] = publicationList.OrderByDescending(x=>x.Rate).ToList();
             ViewData["Comments"] = dbContext.Comments.ToList();

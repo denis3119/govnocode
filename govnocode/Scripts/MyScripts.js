@@ -553,7 +553,7 @@ function viewcomment(data) {
                     
                     "</table>";
 
-                nameurl += "<a style=\"margin-left:0%;\"  href=\"/Profile/details/" + userid + "\"><img id=\"aimg" + id + "\" src=\"" + "\" alt=\"admin\" width=\"32\" height=\"32\" class=\"img-rounded img-responsive\">"
+                nameurl += "<a style=\"margin-left:0%;\"  href=\"/Profile/details/" + userid + "\"><center><img id=\"aimg" + id + "\" src=\"" + "\" alt=\"admin\" width=\"32\" height=\"32\" class=\"img-rounded img-responsive\"></center>"
                     + userName + "</a>";
                 var row = rows(text);
                 res += "<div class=\"well-sm well-1\"  style=\"border: 1px;padding: 1px\">" +

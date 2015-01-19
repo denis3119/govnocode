@@ -30,11 +30,11 @@
         {
             @*<div>@variable.Title </div>
                 <a href="@Url.Action("Details","Publication",new {id=variable.Id})">33</a>*@
-            <div class="well-1 well-sm">
+            <div class="well-sm">
                 <div class="row">
-                    <div class="col-md-2" style="margin-top: 0.4%">
+                    <div class="col-md-2" >
                         <img id="" src="../../Images/starOn.png" alt="" />
-                        @if (variable.Rate >= 2)
+                        @if (variable.Rate >= 1.5)
                         {
                             <img id="" src="../../Images/starOn.png" alt="" />
                         }
@@ -42,7 +42,7 @@
                         {
                             <img id="" src="../../Images/starOff.png" alt="" />
                         }
-                        @if (variable.Rate >= 3)
+                        @if (variable.Rate >= 2.5)
                         {
                             <img id="" src="../../Images/starOn.png" alt="" />
                         }
@@ -50,7 +50,7 @@
                         {
                             <img id="" src="../../Images/starOff.png" alt="" />
                         }
-                        @if (variable.Rate >= 4)
+                        @if (variable.Rate >= 3.5)
                         {
                             <img id="" src="../../Images/starOn.png" alt="" />
                         }
@@ -58,7 +58,7 @@
                         {
                             <img id="" src="../../Images/starOff.png" alt="" />
                         }
-                        @if (variable.Rate > 4.9)
+                        @if (variable.Rate > 4.5)
                         {
                             <img id="" src="../../Images/starOn.png" alt="" />
                         }
@@ -67,29 +67,32 @@
                             <img id="" src="../../Images/starOff.png" alt="" />
                         }
                     </div>
-                    <div class="col-md-3">
-                        <label class="text-info" style="margin-top: 2.7%">
+                    <div class="col-md-4">
+                        <text class="text-info">
+                             @{ var t = "";}
                             @if (variable.Title.Length > 30)
                             {
-                                @Html.Raw(@variable.Title.Substring(0, 29) + "...")
+                                t = @variable.Title.Substring(0, 29) + "...";
 
                             }
                             else
                             {
-                                @Html.Raw(@variable.Title)
+                                t = @variable.Title;
                                 ;
                             }
-                        </label>
+                            <a href="@Url.Action("Details", "Publication", new {id = variable.Id})" class="">@t</a>
+                        </text>
 
                     </div>
-                    <div class="col-md-4" style="margin-top: 0.5%">
+
+                    <div class="col-md-4" >
                         @{
                             var code10Chars = "";
                             var i = 0;
                             foreach (var VARIABLE in variable.Code.Replace("\r\n", ""))
                             {
 
-                                if (i < 40)
+                                if (i < 25)
                                 {
                                     code10Chars += VARIABLE;
                                 }
@@ -100,19 +103,15 @@
                                 i++;
                             }
                         }
-                        <pre class="prettyprint" style="margin-bottom: -10%"> @code10Chars...... </pre>
+                        <pre class="prettyprint" > @code10Chars...</pre>
                     </div>
-                    <div class="col-md-2" style="margin-top: 0.5%">
+                    <div class="col-md-2" >
                         @{
                             var listComments = (List<Comment>)ViewData["Comments"];
                             var count = listComments.Count(x => x.IdPublication == variable.Id);
                         }
                         @Resource.Comments:@count
 
-                    </div>
-
-                    <div class="col-md-1">
-                        <a href="@Url.Action("Details", "Publication", new {id = variable.Id})" class="btn btn-link text-info">@Resource.Details</a>
                     </div>
                 </div>
             </div>
