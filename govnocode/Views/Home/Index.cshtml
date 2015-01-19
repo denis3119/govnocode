@@ -496,9 +496,9 @@
                  <a href="@Url.Action("Details","Publication",new{id=variable.Id})">
                      <div class="col-md-3" >
                          <text class="text-info" >
-                             @if (variable.Title.Length > 30)
+                             @if (variable.Title.Length > 25)
                              {
-                                 @Html.Raw(@variable.Title.Substring(0, 29) + "...")
+                                 @Html.Raw(@variable.Title.Substring(0, 24) + "...")
 
                              }
                              else

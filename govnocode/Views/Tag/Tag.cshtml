@@ -57,7 +57,7 @@
                     <label class="text-info" style="margin-top: 2.7%">
                         @if (variable.Title.Length > 25)
                         {
-                            @Html.Raw(@variable.Title.Substring(0, 24) + "...")
+                            @Html.Raw(@variable.Title.Substring(0, 24).Replace("	", " ") + "...")
 
                         }
                         else

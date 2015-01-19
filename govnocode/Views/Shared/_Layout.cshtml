@@ -86,7 +86,7 @@
                     @using (Html.BeginForm("Index", "Search", FormMethod.Get, new { @class = "navbar-right navbar-form" }))
                     {
                         <div class="form-group">
-                            <input type="text" class="form-control" id="s" name="s" placeholder="Search">
+                            <input type="text" class="form-control" id="s" name="s" placeholder="@Resource.Search">
                         </div>
                          <button type="submit" class="btn btn-default">@Resource.Search</button>
                     }

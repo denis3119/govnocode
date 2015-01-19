@@ -384,4 +384,13 @@
   <data name="BtnToPublication" xml:space="preserve">
     <value>К публикации</value>
   </data>
+  <data name="EnterNewName" xml:space="preserve">
+    <value>Введите новое имя</value>
+  </data>
+  <data name="Link_Image" xml:space="preserve">
+    <value>Только ссылку на фото</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Профиль</value>
+  </data>
 </root>

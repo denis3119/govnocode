@@ -384,4 +384,13 @@
   <data name="BtnToPublication" xml:space="preserve">
     <value>To publication</value>
   </data>
+  <data name="EnterNewName" xml:space="preserve">
+    <value>Enter new name</value>
+  </data>
+  <data name="Link_Image" xml:space="preserve">
+    <value>Only link to the photo</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Profile</value>
+  </data>
 </root>

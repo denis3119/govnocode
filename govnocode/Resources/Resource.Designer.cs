@@ -340,6 +340,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Введите новое имя.
+        /// </summary>
+        public static string EnterNewName {
+            get {
+                return ResourceManager.GetString("EnterNewName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Вы не имеете профиля на этом сайте..
         /// </summary>
         public static string ErrorPass {
@@ -453,6 +462,15 @@ namespace Resources {
         public static string Lang {
             get {
                 return ResourceManager.GetString("Lang", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Только ссылку на фото.
+        /// </summary>
+        public static string Link_Image {
+            get {
+                return ResourceManager.GetString("Link_Image", resourceCulture);
             }
         }
         

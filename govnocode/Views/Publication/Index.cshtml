@@ -37,7 +37,7 @@
             <td>
                 @*@Html.DisplayFor(modelItem => item.Title)*@
                 @{
-                   @Html.Raw(item.Title.Length>50?(item.Title.Substring(0,49)+"...."):(item.Title))
+                   @Html.Raw(item.Title.Length > 50 ? (item.Title.Substring(0, 49)+ "....") : (item.Title))
                 }
             </td>
             <td>

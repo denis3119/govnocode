@@ -9,7 +9,7 @@
 
 <p class="text-success">@ViewBag.StatusMessage</p>
 
-    <h4>Change your account settings</h4>
+
 <hr/>
 <div class="row">
     <div class="col-md-2">
@@ -22,7 +22,7 @@
             <div class="well-sm">
                 <label id="saveName" class="label label-danger"></label>
                 <div style="" class="col-md-6">
-                    <input id="userName" onchange="" class="form-control" style="max-width: 100%; width: 100%" type="text" placeholder="введите новое имя"/>
+                    <input id="userName" onchange="" class="form-control" style="max-width: 100%; width: 100%" type="text" placeholder="@Resource.EnterNewName"/>
                 </div>
                 <div class="col-md-1" style="">
                     <input onclick="setUserName()" type="button" class="btn btn-default" value="@Resource.Save"/>
@@ -35,7 +35,7 @@
             <div class="well-sm">
                 <label id="saveImage" class="label label-danger"></label>
                 <div style="" class="col-md-6">
-                    <input id="linkImage" onchange="" onkeyup="    ChahgeImage()" class="form-control" style="max-width: 100%; width: 100%" type="text" placeholder="Link image"/>
+                    <input id="linkImage" onchange="" onkeyup="    ChahgeImage()" class="form-control" style="max-width: 100%; width: 100%" type="text" placeholder="@Resource.Link_Image"/>
                 </div>
                 <div class="col-md-1" style="">
                     <input onclick="setImageLink()" type="button" class="btn btn-default" value="@Resource.Save"/>

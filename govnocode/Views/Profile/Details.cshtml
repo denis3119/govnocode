@@ -70,9 +70,9 @@
                     <div class="col-md-4">
                         <text class="text-info">
                              @{ var t = "";}
-                            @if (variable.Title.Length > 30)
+                            @if (variable.Title.Length > 25)
                             {
-                                t = @variable.Title.Substring(0, 29) + "...";
+                                t = @variable.Title.Substring(0, 24) + "...";
 
                             }
                             else

@@ -74,10 +74,10 @@
                     @{
                         var code10Chars = "";
                         var i = 0;
-                        foreach (var VARIABLE in variable.Code.Replace("\r\n", ""))
+                        foreach (var VARIABLE in variable.Code.Replace("\r\n", "").Replace("    "," "))
                         {
 
-                            if (i < 35)
+                            if (i < 30)
                             {
                                 code10Chars += VARIABLE;
                             }
