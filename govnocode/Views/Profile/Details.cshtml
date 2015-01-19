@@ -68,7 +68,7 @@
                         }
                     </div>
                     <div class="col-md-4">
-                        <text class="text-info">
+                        <text class="h4">
                              @{ var t = "";}
                             @if (variable.Title.Length > 25)
                             {
@@ -82,7 +82,6 @@
                             }
                             <a href="@Url.Action("Details", "Publication", new {id = variable.Id})" class="">@t</a>
                         </text>
-
                     </div>
 
                     <div class="col-md-4" >

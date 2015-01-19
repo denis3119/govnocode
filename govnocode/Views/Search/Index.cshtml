@@ -55,26 +55,20 @@
                     <img id="" src="../../Images/starOff.png" alt="" />
                     }
                 </div>
-                <div class="col-md-3">
-                    <label class="text-info new-theme-label" style="margin-top: 2.7%">
-                        @if (variable.Title.Length > 30)
-                        {
-                        @Html.Raw(@variable.Title.Substring(0, 29) + "...")
+                <a href="@Url.Action("Details", "Publication", new {id = variable.Id})" class="">
+                    <div class="col-md-3">
 
-                        }
-                        else
-                        {
-                        @Html.Raw(@variable.Title)
-                            ;
-                        }
-                    </label>
+                        <label class="" style="margin-top: 2.7%">
+                            @(variable.Title.Length > 30 ? Html.Raw(@variable.Title.Substring(0, 29) + "...") : Html.Raw(@variable.Title))
+                        </label>
 
-                </div>
+                    </div>
+                </a>
                 <div class="col-md-4" style="margin-top: 0.5%">
                     @{
                         var code10Chars = "";
                         var i = 0;
-                        foreach (var VARIABLE in variable.Code.Replace("\r\n", "").Replace("    "," "))
+                        foreach (var VARIABLE in variable.Code.Replace("\r\n", "").Replace("    ", " "))
                         {
 
                             if (i < 30)
@@ -142,8 +136,8 @@
                 <div class="col-md-1" style="font-size: larger">@Resource.InPublication</div>
                 <div class="col-md-5" style="font-size: larger">
                     @{
-                        var variable2 = variable;
-                        var publication = allPublication.First(x => x.Id == variable2.IdPublication);
+                                var variable2 = variable;
+                                var publication = allPublication.First(x => x.Id == variable2.IdPublication);
                     }
                     <a href="@Url.Action("Details", "Publication", new {id = publication.Id})">@publication.Title</a>
                 </div>
@@ -153,8 +147,8 @@
 
                             <div class="">
                                 @{
-                                    var variable1 = variable;
-                                    var firstOrDefault = users.FirstOrDefault(x => x.Id == variable1.IdUser);
+                                var variable1 = variable;
+                                var firstOrDefault = users.FirstOrDefault(x => x.Id == variable1.IdUser);
                                 }
                                 @if (firstOrDefault != null)
                                 {
