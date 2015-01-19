@@ -67,7 +67,7 @@ namespace govnocode.Controllers
 
             await _dbContext.SaveChangesAsync();
 
-             ModelState.AddModelError("","изменения сохранены");
+             ModelState.AddModelError("",Resources.Resource.save_changes);
             return View("Edit", publication);
         }
         public ActionResult Details(int id=-1)
@@ -112,7 +112,7 @@ namespace govnocode.Controllers
             publication = _dbContext.Publications.First(x => x.Id == publication.Id);
             if (userid != publication.UserId&&!User.IsInRole("admin"))
             {
-                ModelState.AddModelError("", "Не ваши новости");
+                ModelState.AddModelError("", "error");
                 return View("Index", _dbContext.Publications);
             }
             _dbContext.Entry(publication).State = EntityState.Deleted;

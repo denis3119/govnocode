@@ -70,6 +70,42 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email не подтвержден либо другая ошибка.
+        /// </summary>
+        public static string AccountController_Login_Email_не_подтвержден_либо_другая_ошибка {
+            get {
+                return ResourceManager.GetString("AccountController_Login_Email_не_подтвержден_либо_другая_ошибка", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid login attempt..
+        /// </summary>
+        public static string AccountController_Login_Invalid_login_attempt_ {
+            get {
+                return ResourceManager.GetString("AccountController_Login_Invalid_login_attempt_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to вы заблокированы.
+        /// </summary>
+        public static string AccountController_Login_вы_заблокированы {
+            get {
+                return ResourceManager.GetString("AccountController_Login_вы_заблокированы", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid code..
+        /// </summary>
+        public static string AccountController_VerifyCode_Invalid_code_ {
+            get {
+                return ResourceManager.GetString("AccountController_VerifyCode_Invalid_code_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Вы действительно хотите удалить пользователя?.
         /// </summary>
         public static string AdminDeleteText {
@@ -201,6 +237,15 @@ namespace Resources {
         public static string ConfimEmailTextLink {
             get {
                 return ResourceManager.GetString("ConfimEmailTextLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Подтверждение вашего аккаунта.
+        /// </summary>
+        public static string Confirm_your_account {
+            get {
+                return ResourceManager.GetString("Confirm_your_account", resourceCulture);
             }
         }
         
@@ -349,6 +394,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to тут.
+        /// </summary>
+        public static string here {
+            get {
+                return ResourceManager.GetString("here", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Главная.
         /// </summary>
         public static string Home {
@@ -466,6 +520,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to имя уже используется.
+        /// </summary>
+        public static string name_already {
+            get {
+                return ResourceManager.GetString("name_already", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Мега проект.
         /// </summary>
         public static string NameProject {
@@ -489,6 +552,24 @@ namespace Resources {
         public static string Old {
             get {
                 return ResourceManager.GetString("Old", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Для подтверждения email нажмите.
+        /// </summary>
+        public static string Please_confirm_your_account_by_clicking {
+            get {
+                return ResourceManager.GetString("Please_confirm_your_account_by_clicking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Для сброса пароля нажмите .
+        /// </summary>
+        public static string Please_reset_your_password_by_clicking {
+            get {
+                return ResourceManager.GetString("Please_reset_your_password_by_clicking", resourceCulture);
             }
         }
         
@@ -556,6 +637,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Сброс пароля.
+        /// </summary>
+        public static string Reset_Password {
+            get {
+                return ResourceManager.GetString("Reset_Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Сброс.
         /// </summary>
         public static string ResetBtnReset {
@@ -597,6 +687,15 @@ namespace Resources {
         public static string Save {
             get {
                 return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to изменения сохранены.
+        /// </summary>
+        public static string save_changes {
+            get {
+                return ResourceManager.GetString("save_changes", resourceCulture);
             }
         }
         

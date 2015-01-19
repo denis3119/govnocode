@@ -345,4 +345,37 @@
   <data name="Themes" xml:space="preserve">
     <value>Themes</value>
   </data>
+  <data name="AccountController_Login_Email_не_подтвержден_либо_другая_ошибка" xml:space="preserve">
+    <value>Email not comfimed or other error</value>
+  </data>
+  <data name="AccountController_Login_Invalid_login_attempt_" xml:space="preserve">
+    <value>Invalid login attempt.</value>
+  </data>
+  <data name="AccountController_Login_вы_заблокированы" xml:space="preserve">
+    <value>Your blocked</value>
+  </data>
+  <data name="AccountController_VerifyCode_Invalid_code_" xml:space="preserve">
+    <value>Invalid code.</value>
+  </data>
+  <data name="Confirm_your_account" xml:space="preserve">
+    <value>Confirm your account</value>
+  </data>
+  <data name="here" xml:space="preserve">
+    <value>here</value>
+  </data>
+  <data name="name_already" xml:space="preserve">
+    <value>name already</value>
+  </data>
+  <data name="Please_confirm_your_account_by_clicking" xml:space="preserve">
+    <value>Please confirm your account by clicking</value>
+  </data>
+  <data name="Please_reset_your_password_by_clicking" xml:space="preserve">
+    <value>Please reset your password by clicking</value>
+  </data>
+  <data name="Reset_Password" xml:space="preserve">
+    <value />
+  </data>
+  <data name="save_changes" xml:space="preserve">
+    <value>save changes</value>
+  </data>
 </root>

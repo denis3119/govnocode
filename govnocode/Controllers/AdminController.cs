@@ -42,7 +42,7 @@ namespace govnocode.Controllers
             var error = _usersFunction.UsedName(user.Name);
             if (error)
             {
-                ModelState.AddModelError("", string.Format("имя уже используется({0})",user.Name));
+                ModelState.AddModelError("", string.Format(Resources.Resource.name_already+"({0})",user.Name));
                 return View(UserManager.FindById(user.Id));
             }
             _usersFunction.Update(user);

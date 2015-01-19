@@ -6,6 +6,7 @@ using govnocode.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using Resources;
 
 namespace govnocode.Controllers
 {
@@ -76,12 +77,12 @@ namespace govnocode.Controllers
                 t = firstOrDefault.EmailConfirmed;
             if (!t)
             {
-                ModelState.AddModelError("", "ваше мыло не подтверждено или такого пользователя нету");
+                ModelState.AddModelError("", Resource.AccountController_Login_Email_не_подтвержден_либо_другая_ошибка);
                 return View(model);
             }
             if (firstOrDefault.Blocked)
             {
-                ModelState.AddModelError("", "вы заблокированы");
+                ModelState.AddModelError("", Resource.AccountController_Login_вы_заблокированы);
                 return View(model);
             }
             // This doesn't count login failures towards account lockout
@@ -97,7 +98,7 @@ namespace govnocode.Controllers
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Invalid login attempt.");
+                    ModelState.AddModelError("", Resource.AccountController_Login_Invalid_login_attempt_);
                     return View(model);
             }
         }
@@ -140,7 +141,7 @@ namespace govnocode.Controllers
                     return View("Lockout");
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Invalid code.");
+                    ModelState.AddModelError("", Resource.AccountController_VerifyCode_Invalid_code_);
                     return View(model);
             }
         }
@@ -178,7 +179,7 @@ namespace govnocode.Controllers
                     await UserManager.AddToRoleAsync(user.Id, "user");
                      var code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                      var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                     await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                    await UserManager.SendEmailAsync(user.Id, Resource.Confirm_your_account, Resource.Please_confirm_your_account_by_clicking+" <a href=\"" + callbackUrl + "\">"+Resource.here+"</a>");
                        
                     return RedirectToAction("RegisterSuccess", "Account");
                 }
@@ -230,7 +231,7 @@ namespace govnocode.Controllers
                 // Send an email with this link
                  string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
                 var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);		
-                 await UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                 await UserManager.SendEmailAsync(user.Id, Resource.Reset_Password,Resource.Please_reset_your_password_by_clicking+ "<a href=\"" + callbackUrl + "\">"+Resource.here+"</a>");
 
                  return RedirectToAction("ForgotPasswordConfirmation", "Account");
             }

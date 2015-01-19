@@ -492,7 +492,7 @@
                      }
                  </div>
                  <div class="col-md-3">
-                     <label class="text-info" style="margin-top: 2.7%">
+                     <label class="text-info new-theme-label" style="">
                          @if (variable.Title.Length > 30)
                          {
                              @Html.Raw(@variable.Title.Substring(0, 29) + "...")
@@ -513,7 +513,7 @@
                          foreach (var VARIABLE in variable.Code.Replace("\r\n", ""))
                          {
 
-                             if (i < 28)
+                             if (i < 23)
                              {
                                  code10Chars += VARIABLE;
                              }
@@ -535,10 +535,10 @@
 
                  </div>
                  <div class="col-md-1">
-                     <label style="margin-top: 8.5%" class="text-info">@(variable.Date.Day).@(variable.Date.Month).@variable.Date.Year </label>
+                     <label style="" class="text-info new-theme-label-date">@(variable.Date.Day).@(variable.Date.Month).@variable.Date.Year </label>
                  </div>
 
-                 <div class="col-md-1">
+                 <div class="col-md-1 new-theme-btn">
                      <a href="@Url.Action("Details", "Publication", new {id = variable.Id})" class="btn btn-link text-info">@Resource.Details</a>
                  </div>
              </div>
