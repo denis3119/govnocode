@@ -74,7 +74,6 @@ namespace govnocode.Controllers
         }
         public ActionResult Details(int id=-1)
         {
-           
             var publication = _dbContext.Publications.FirstOrDefault(x => x.Id == id);
             if (id == -1) return RedirectToAction("Index","Home");
             if (publication == null) return View(new Publication());

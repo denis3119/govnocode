@@ -48,8 +48,9 @@
         </td>
         <td>
             @Html.ActionLink(Resource.Edit, "Edit", new { id=item.Id }) |
-            @Html.ActionLink(Resource.Details, "Details", new { id=item.Id }) |
-            @Html.ActionLink(Resource.Delete, "Delete", new { id=item.Id })
+            <a href="@Url.Action("Details","profile",new{id = item.Id})">@Resource.Details</a> |
+            @Html.ActionLink(Resource.Delete, "Delete", new {id = item.Id})
+           
         </td>
     </tr>
 }

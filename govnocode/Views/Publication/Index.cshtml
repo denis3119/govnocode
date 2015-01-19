@@ -9,7 +9,8 @@
 <h2>@Resource.MyPublication</h2>
 
 <p>
-    @Html.ActionLink(@Resource.Create, "Create")
+    @*@Html.ActionLink(@Resource.Create, "Create")*@
+    <a href="@Url.Action("Create")" class="btn btn-info">@Resource.Create</a>
 </p>
                      
 <table class="table">
