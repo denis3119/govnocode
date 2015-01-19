@@ -19,7 +19,7 @@
                                  user.Name = "noname";
                              }
                          }
-            @Html.ActionLink("Hello " + user.Name + "!", "Index", "Manage", routeValues: null, htmlAttributes: new {title = "Manage"})
+            @Html.ActionLink(Resource.hello+" " + user.Name + "!", "Index", "Manage", routeValues: null, htmlAttributes: new {title = "Manage"})
         </li>
         <li><a href="javascript:document.getElementById('logoutForm').submit()">@Resource.Exit</a></li>
     </ul>

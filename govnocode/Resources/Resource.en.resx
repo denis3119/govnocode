@@ -378,4 +378,7 @@
   <data name="save_changes" xml:space="preserve">
     <value>save changes</value>
   </data>
+  <data name="hello" xml:space="preserve">
+    <value>Hello</value>
+  </data>
 </root>
